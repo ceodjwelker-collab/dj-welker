@@ -1,0 +1,15 @@
+{
+  "name": "DJ Welker — Creative Systems Designer",
+  "short_name": "DJ Welker",
+  "description": "Portfolio and résumé of DJ Welker — brand, product, web, automation, and operations. York, PA + remote.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F0E6",
+  "theme_color": "#F4F0E6",
+  "lang": "en-US",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

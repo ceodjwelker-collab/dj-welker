@@ -1,0 +1,10 @@
+# DJ Welker — portfolio
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Be explicit for AI/search crawlers that respect it
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://dj-welker.vercel.app/sitemap.xml

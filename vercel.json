@@ -1,0 +1,13 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/resume", "destination": "/resume.html", "permanent": false },
+    { "source": "/cv", "destination": "/resume.html", "permanent": false },
+    { "source": "/work", "destination": "/work.html", "permanent": false },
+    { "source": "/about", "destination": "/about.html", "permanent": false },
+    { "source": "/services", "destination": "/services.html", "permanent": false },
+    { "source": "/contact", "destination": "/contact.html", "permanent": false },
+    { "source": "/hire", "destination": "/contact.html", "permanent": false }
+  ]
+}

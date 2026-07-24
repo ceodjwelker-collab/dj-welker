@@ -8,3 +8,4 @@ User-agent: GPTBot
 Allow: /
 
 Sitemap: https://dj-welker.vercel.app/sitemap.xml
+# deploy: 3D hero + refreshed live screenshots

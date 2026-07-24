@@ -91,7 +91,7 @@
       "case": true,
       "summary": "Real-estate acquisition OS \u2014 analyze a deal in seconds, run the pipeline, auto-generate contracts, manage cash buyers.",
       "proof": "Working deal engine with real formulas (MAO/ARV/ROI/risk).",
-      "live_url": "https://stake-os-eight.vercel.app"
+      "live_url": "https://stakeos.vercel.app"
     },
     {
       "slug": "plug",

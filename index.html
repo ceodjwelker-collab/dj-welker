@@ -26,14 +26,14 @@
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="DJ Welker — Creative Systems Designer &amp; Business Modernizer" />
 <meta property="og:description" content="DJ Welker builds brands, products, campaigns, and systems that make businesses harder to ignore and easier to run. York, PA + remote." />
-<meta property="og:image" content="https://dj-welker.vercel.app/og.png" />
+<meta property="og:image" content="https://dj-welker.vercel.app/assets/brand/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="DJ Welker — creative systems designer, York PA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="DJ Welker — Creative Systems Designer &amp; Business Modernizer" />
 <meta name="twitter:description" content="DJ Welker builds brands, products, campaigns, and systems that make businesses harder to ignore and easier to run. York, PA + remote." />
-<meta name="twitter:image" content="https://dj-welker.vercel.app/og.png" />
+<meta name="twitter:image" content="https://dj-welker.vercel.app/assets/brand/og.png" />
 <!-- /dj:meta -->
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DJ Welker", "inLanguage": "en-US", "author": {"@context": "https://schema.org", "@type": "Person", "url": "https://dj-welker.vercel.app/", "name": "DJ Welker", "alternateName": "Daniel Welker", "jobTitle": "Creative Systems Designer & Business Modernizer", "email": "mailto:ceodjwelker@gmail.com", "telephone": "+1-717-881-4960", "address": {"@type": "PostalAddress", "addressLocality": "York", "addressRegion": "PA", "addressCountry": "US"}, "sameAs": ["https://instagram.com/dj.welker", "https://www.linkedin.com/in/dj-welker"], "alumniOf": {"@type": "EducationalOrganization", "name": "Dallastown Area High School"}, "worksFor": {"@type": "Organization", "name": "CE OS"}, "knowsAbout": ["Brand identity", "Web development", "UI/UX design", "Automation", "Local SEO", "AI implementation", "Business operations"]}}</script>
@@ -50,7 +50,7 @@
 <main id="main">
 
 <!-- HERO -->
-<header class="pad"><div class="wrap">
+<header class="pad" style="position:relative;overflow:hidden"><canvas id="heroCanvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none"></canvas><div class="wrap" style="position:relative;z-index:1">
   <span class="eyebrow">DJ Welker · York, PA + remote</span>
   <h1 style="font-size:clamp(2.4rem,6vw,5rem);letter-spacing:-.035em;margin:22px 0 24px;max-width:16ch">I build brands, products, campaigns, and <span class="accent">systems</span> that make businesses harder to ignore and easier to run.</h1>
   <p class="lead">Multidisciplinary creative systems designer and business modernizer. I take an unclear business, brand, event, or idea and turn it into something organized, attractive, and built to move — the identity, the experience, the content, and the tools behind it.</p>
@@ -176,6 +176,60 @@
 </div></footer>
 
 <button class="totop" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('heroCanvas'); if(!cv||!window.THREE) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); }catch(e){ return; }
+  renderer.setClearColor(0x000000,0);
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(60,1,0.1,100); camera.position.z=13;
+  var GROUP=new THREE.Group(); scene.add(GROUP);
+  var N=reduce?46:74, R=9, pts=[];
+  var geo=new THREE.BufferGeometry(), pos=new Float32Array(N*3);
+  for(var i=0;i<N;i++){
+    var v=new THREE.Vector3((Math.random()*2-1)*R,(Math.random()*2-1)*R*0.62,(Math.random()*2-1)*R*0.6);
+    v.vel=new THREE.Vector3((Math.random()-0.5)*0.006,(Math.random()-0.5)*0.006,(Math.random()-0.5)*0.006);
+    pts.push(v); pos[i*3]=v.x;pos[i*3+1]=v.y;pos[i*3+2]=v.z;
+  }
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  GROUP.add(new THREE.Points(geo,new THREE.PointsMaterial({color:0x1E4635,size:0.13,transparent:true,opacity:0.85})));
+  var lgeo=new THREE.BufferGeometry();
+  GROUP.add(new THREE.LineSegments(lgeo,new THREE.LineBasicMaterial({color:0x1E4635,transparent:true,opacity:0.22})));
+  var mx=0,my=0,tmx=0,tmy=0;
+  window.addEventListener('pointermove',function(e){ tmx=(e.clientX/window.innerWidth-0.5); tmy=(e.clientY/window.innerHeight-0.5); },{passive:true});
+  function resize(){var p=cv.parentNode,w=p.clientWidth,h=p.clientHeight||520; renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2)); renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();}
+  window.addEventListener('resize',resize); resize();
+  var MAXD=3.4, run=true;
+  document.addEventListener('visibilitychange',function(){ run=!document.hidden; if(run&&!reduce) requestAnimationFrame(tick); });
+  function build(){
+    var seg=[],pa=geo.attributes.position.array;
+    for(var i=0;i<N;i++) for(var j=i+1;j<N;j++){
+      var dx=pa[i*3]-pa[j*3],dy=pa[i*3+1]-pa[j*3+1],dz=pa[i*3+2]-pa[j*3+2];
+      if(dx*dx+dy*dy+dz*dz<MAXD*MAXD) seg.push(pa[i*3],pa[i*3+1],pa[i*3+2],pa[j*3],pa[j*3+1],pa[j*3+2]);
+    }
+    lgeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(seg),3));
+  }
+  function tick(){
+    if(!run) return;
+    var pa=geo.attributes.position.array;
+    for(var i=0;i<N;i++){ var v=pts[i];
+      v.x+=v.vel.x; v.y+=v.vel.y; v.z+=v.vel.z;
+      if(v.x>R||v.x<-R)v.vel.x*=-1; if(v.y>R*0.62||v.y<-R*0.62)v.vel.y*=-1; if(v.z>R*0.6||v.z<-R*0.6)v.vel.z*=-1;
+      pa[i*3]=v.x;pa[i*3+1]=v.y;pa[i*3+2]=v.z;
+    }
+    geo.attributes.position.needsUpdate=true; build();
+    GROUP.rotation.y+=0.0016; GROUP.rotation.x=Math.sin(Date.now()*0.00007)*0.12;
+    mx+=(tmx-mx)*0.05; my+=(tmy-my)*0.05;
+    camera.position.x=mx*3.2; camera.position.y=-my*2.2; camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+    if(!reduce) requestAnimationFrame(tick);
+  }
+  build(); tick();
+})();
+</script>
 <script src="dj.js" defer></script>
 </body>
 </html>

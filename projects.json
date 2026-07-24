@@ -1,0 +1,247 @@
+{
+  "_guide": "Edit this file to manage projects. Each entry maps to a card in work.html and (if page exists) a case page in /work/<slug>.html. Set featured:true to show on the homepage. Set draft:true to hide. categories drive the work-index filters.",
+  "site": {
+    "name": "DJ Welker",
+    "role": "Creative systems designer \u00b7 Business modernizer",
+    "location": "York, PA + remote",
+    "email": "ceodjwelker@gmail.com",
+    "phone": "+1-717-881-4960",
+    "socials": {
+      "instagram": "https://instagram.com/dj.welker",
+      "tiktok": "TODO",
+      "linkedin": "TODO"
+    }
+  },
+  "categories": [
+    "brand",
+    "product",
+    "campaign",
+    "experience",
+    "ops"
+  ],
+  "projects": [
+    {
+      "slug": "ce-os",
+      "title": "CE OS",
+      "client": "CE OS (own studio)",
+      "year": 2026,
+      "status": "Active studio",
+      "role": "Founder \u00b7 builder, end to end",
+      "categories": [
+        "brand",
+        "product",
+        "ops"
+      ],
+      "featured": true,
+      "draft": false,
+      "case": true,
+      "summary": "A founder-run operating-system studio \u2014 brand, product, website, and design system, built as one connected system.",
+      "proof": "Positioning, identity, site, product model, client delivery, internal ops \u2014 all one person.",
+      "live_url": "https://ceos-site.vercel.app"
+    },
+    {
+      "slug": "titanium-detailing",
+      "title": "Titanium Detailing",
+      "client": "Titanium Detailing",
+      "year": 2026,
+      "status": "Client project",
+      "role": "Brand, site, local SEO, booking, reviews",
+      "categories": [
+        "brand",
+        "experience",
+        "ops"
+      ],
+      "featured": true,
+      "draft": false,
+      "case": true,
+      "summary": "A paid client build for an auto-detailing business: brand, a mobile-first site, local pages, online booking, and an automatic review flow.",
+      "proof": "Paid client engagement \u2014 brand, mobile site, local pages, booking + review flow, delivered as a build."
+    },
+    {
+      "slug": "shiftly",
+      "title": "Shiftly / Fair Stand OS",
+      "client": "Own product",
+      "year": 2026,
+      "status": "Early sales",
+      "role": "Product design + build",
+      "categories": [
+        "product",
+        "ops"
+      ],
+      "featured": true,
+      "draft": false,
+      "case": true,
+      "summary": "Workforce OS for local businesses, fairs, and food trucks \u2014 POS, staff, scheduling, payroll, tips. Installable PWA, no per-transaction fees.",
+      "proof": "Real working PWA. Shiftly = Fair Stand OS (same product).",
+      "live_url": "https://shiftlyhq.vercel.app"
+    },
+    {
+      "slug": "stake",
+      "title": "STAKE",
+      "client": "Own product",
+      "year": 2026,
+      "status": "Building",
+      "role": "Product + deal-math design",
+      "categories": [
+        "product",
+        "ops"
+      ],
+      "featured": true,
+      "draft": false,
+      "case": true,
+      "summary": "Real-estate acquisition OS \u2014 analyze a deal in seconds, run the pipeline, auto-generate contracts, manage cash buyers.",
+      "proof": "Working deal engine with real formulas (MAO/ARV/ROI/risk).",
+      "live_url": "https://stake-os-eight.vercel.app"
+    },
+    {
+      "slug": "plug",
+      "title": "PLUG",
+      "client": "Own product",
+      "year": 2026,
+      "status": "Active",
+      "role": "Product + engine design",
+      "categories": [
+        "product",
+        "campaign"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": true,
+      "summary": "TikTok Shop product + content engine \u2014 trending product data, a hook/script studio, and a compliance checker.",
+      "proof": "Data + content generation + compliance rules-engine."
+    },
+    {
+      "slug": "scrollstop",
+      "title": "ScrollStop",
+      "client": "Own venture",
+      "year": 2026,
+      "status": "Near-live",
+      "role": "Store + content + ops dashboard",
+      "categories": [
+        "campaign",
+        "product"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": false,
+      "summary": "TikTok-first viral-gadget Shopify store \u2014 72 products, lead-capture games, Klaviyo flows, dropship ops dashboard."
+    },
+    {
+      "slug": "trimshitonly",
+      "title": "TSO Apparel",
+      "client": "Own venture",
+      "year": 2026,
+      "status": "Active",
+      "role": "Brand + listing/inventory tooling",
+      "categories": [
+        "brand",
+        "campaign"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": false,
+      "summary": "Curated resale + one-of-one custom apparel with its own tools \u2014 iced, chrome aesthetic across Depop, Grailed, eBay."
+    },
+    {
+      "slug": "booking-ai",
+      "title": "Booking + AI Receptionist",
+      "client": "Product / demo",
+      "year": 2026,
+      "status": "Client-ready",
+      "role": "Automation + AI flow design",
+      "categories": [
+        "ops"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": false,
+      "summary": "Online booking with Stripe deposits and reminders, plus an AI receptionist that books jobs 24/7."
+    },
+    {
+      "slug": "command-center",
+      "title": "CE OS Command Center",
+      "client": "Internal",
+      "year": 2026,
+      "status": "Internal system",
+      "role": "Internal tool design + build",
+      "categories": [
+        "ops"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": false,
+      "summary": "The private hub that runs the studio \u2014 scored leads, quote builder, CRM-wired status."
+    },
+    {
+      "slug": "carbyn",
+      "title": "CARBYN",
+      "client": "Own venture",
+      "year": 2026,
+      "status": "Long-game",
+      "role": "Brand + creative direction",
+      "categories": [
+        "brand",
+        "experience"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": false,
+      "summary": "DJ, music, and nightlife \u2014 the underground-scene alias, built on the same system."
+    },
+    {
+      "slug": "liftwave",
+      "title": "LIFTWAVE",
+      "client": "Own product",
+      "year": 2026,
+      "status": "Building",
+      "role": "Product architecture + brand",
+      "categories": [
+        "product"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": true,
+      "live_url": "https://liftwave-delta.vercel.app",
+      "summary": "One commercial DJ platform \u2014 visuals, mixing, soundboard, paid requests, earnings."
+    },
+    {
+      "slug": "auxtion",
+      "title": "AUXTION",
+      "client": "Own product",
+      "year": 2026,
+      "status": "Live infrastructure",
+      "role": "Product \u00b7 brand \u00b7 build",
+      "categories": [
+        "product",
+        "experience"
+      ],
+      "featured": true,
+      "draft": false,
+      "case": true,
+      "live_url": "https://auxtion-red.vercel.app",
+      "summary": "Pay-to-play song-request app for DJs \u2014 Stripe Connect, 10% platform fee."
+    },
+    {
+      "slug": "mobile-bar",
+      "title": "The Mobile Bar 247",
+      "client": "The Mobile Bar 247",
+      "year": 2026,
+      "status": "Active client",
+      "role": "Marketing & content",
+      "categories": [
+        "brand",
+        "campaign",
+        "experience"
+      ],
+      "featured": false,
+      "draft": false,
+      "case": true,
+      "instagram": "https://instagram.com/themobilebar247",
+      "summary": "Marketing and content for a traveling 21+ mobile bar serving PA, NJ, NY, DE, MD and the DMV \u2014 Instagram content, short-form, and event promotion."
+    }
+  ],
+  "todo_projects_missing_assets": [
+    "Top Flavors Grill",
+    "Meanwhile"
+  ]
+}

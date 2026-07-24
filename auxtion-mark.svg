@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">AUXTION signal mark</title>
+  <desc id="desc">A custom letter A built from an upward signal path with a bright queue node.</desc>
+  <path d="M11 51 29.5 13 49 51" fill="none" stroke="#FF5F46" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.5 37.5h21" fill="none" stroke="#F7F8FA" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="48" cy="37.5" r="5.5" fill="#C7FF5A"/>
+</svg>

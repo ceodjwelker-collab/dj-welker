@@ -231,3 +231,49 @@ function djConstellation(cv, N){
       var t=e.target||{}; var typing=/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName||'')||t.isContentEditable; if(!typing&&/^[a-z]$/.test(k)){ typed=(typed+k).slice(-4); if(typed==='rave'||typed.slice(-2)==='dj'&&typed.length>=2&&/dj$/.test(typed)){ if(typed.slice(-2)==='dj')fire(); } if(typed==='rave')fire(); } });
   })();
 })();
+
+/* ============ DJ Welker — features batch 2 (palette · scrollspy · clock) ============ */
+(function(){ 'use strict';
+  var d=document,B=d.body, reduce=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function toast(t){ var el=d.createElement('div'); el.className='dj-toast'; el.textContent=t; B.appendChild(el); setTimeout(function(){el.classList.add('show');},20); setTimeout(function(){el.classList.remove('show');setTimeout(function(){el.remove();},400);},2400); }
+  function djBurst(){ var c=d.createElement('canvas'); c.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:205'; B.appendChild(c); var x=c.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2); c.width=innerWidth*DPR;c.height=innerHeight*DPR; var cx=innerWidth/2*DPR,cy=innerHeight*0.4*DPR,cols=['#1E4635','#3f855f','#c9d94a','#F4F0E6'],ps=[]; for(var i=0;i<150;i++){var a=Math.random()*7,s=(3+Math.random()*10)*DPR;ps.push({x:cx,y:cy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4*DPR,r:(2+Math.random()*4)*DPR,c:cols[i%4],life:1});}(function dd(){x.clearRect(0,0,c.width,c.height);var al=false;ps.forEach(function(p){if(p.life<=0)return;al=true;p.vy+=0.35*DPR;p.x+=p.vx;p.y+=p.vy;p.life-=0.012;x.globalAlpha=Math.max(0,p.life);x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();});x.globalAlpha=1;if(al)requestAnimationFrame(dd);else c.remove();})(); }
+
+  /* Command palette */
+  var cmds=[
+    {t:'Home',s:'index start',h:'index.html'},{t:'Work',s:'projects portfolio case',h:'work.html'},{t:'About',s:'bio dj story',h:'about.html'},{t:'Services',s:'offer hire what',h:'services.html'},{t:'Lab',s:'experiments',h:'lab.html'},{t:'Résumé',s:'cv resume',h:'resume.html'},{t:'Contact',s:'email hire reach',h:'contact.html'},
+    {t:'Email DJ',s:'mail hire contact',a:function(){location.href='mailto:ceodjwelker@gmail.com';}},
+    {t:'Copy email address',s:'clipboard',a:function(){ if(navigator.clipboard)navigator.clipboard.writeText('ceodjwelker@gmail.com'); toast('Email copied'); }},
+    {t:'Toggle Proof Mode',s:'proof honest status',a:function(){ var p=d.getElementById('proofBtn'); if(p)p.click(); }},
+    {t:'Activate DJ MODE',s:'rave party fun easter egg',a:function(){ if(B.classList.contains('dj-rave'))return; B.classList.add('dj-rave'); toast('DJ MODE'); djBurst(); setTimeout(function(){B.classList.remove('dj-rave');},6000); }}
+  ];
+  var pal=d.createElement('div'); pal.id='djPal'; pal.setAttribute('role','dialog'); pal.setAttribute('aria-modal','true');
+  pal.innerHTML='<div class="djPal-bd"></div><div class="djPal-box"><input class="djPal-in" type="text" placeholder="Jump to a page or run a command…" aria-label="Command palette"><ul class="djPal-list"></ul><div class="djPal-hint">&#8593;&#8595; navigate &nbsp;·&nbsp; &#8629; open &nbsp;·&nbsp; esc close &nbsp;·&nbsp; press / or &#8984;K anytime</div></div>';
+  B.appendChild(pal);
+  var input=pal.querySelector('.djPal-in'), list=pal.querySelector('.djPal-list'), sel=0, filt=cmds.slice();
+  function render(){ list.innerHTML=''; filt.forEach(function(c,i){ var li=d.createElement('li'); li.textContent=c.t; li.className=(i===sel?'on':''); li.addEventListener('mousemove',function(){sel=i;paint();}); li.addEventListener('click',function(){run(c);}); list.appendChild(li); }); }
+  function paint(){ [].slice.call(list.children).forEach(function(li,i){ li.className=(i===sel?'on':''); }); }
+  function filter(q){ q=(q||'').toLowerCase().trim(); filt=cmds.filter(function(c){ return !q || (c.t+' '+(c.s||'')).toLowerCase().indexOf(q)>=0; }); sel=0; render(); }
+  function open(){ pal.classList.add('open'); input.value=''; filter(''); setTimeout(function(){input.focus();},30); }
+  function close(){ pal.classList.remove('open'); }
+  function run(c){ close(); if(c.h){ location.href=c.h; } else if(c.a){ c.a(); } }
+  input.addEventListener('input',function(){ filter(input.value); });
+  input.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(filt.length-1,sel+1);paint();} else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(0,sel-1);paint();} else if(e.key==='Enter'){e.preventDefault();if(filt[sel])run(filt[sel]);} else if(e.key==='Escape'){close();} });
+  pal.querySelector('.djPal-bd').addEventListener('click',close);
+  addEventListener('keydown',function(e){ var t=e.target||{}; var typing=/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName||'')||t.isContentEditable;
+    if((e.metaKey||e.ctrlKey)&&(e.key==='k'||e.key==='K')){ e.preventDefault(); pal.classList.contains('open')?close():open(); }
+    else if(e.key==='/'&&!typing&&!pal.classList.contains('open')){ e.preventDefault(); open(); } });
+  render();
+
+  /* Scrollspy dot rail */
+  (function(){ if(innerWidth<900)return; var secs=[].slice.call(d.querySelectorAll('main > section, main > header, main .csec')).filter(function(s){return s.offsetHeight>220;}); if(secs.length<3)return;
+    var rail=d.createElement('div'); rail.id='djRail'; secs.forEach(function(s,i){ var a=d.createElement('a'); a.href='#'; a.setAttribute('aria-label','Jump to section '+(i+1)); a.addEventListener('click',function(e){e.preventDefault(); s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}); rail.appendChild(a); }); B.appendChild(rail);
+    function spy(){ var y=scrollY+innerHeight*0.35, cur=0; secs.forEach(function(s,i){ var o=s.getBoundingClientRect().top+scrollY; if(o<=y)cur=i; }); [].slice.call(rail.children).forEach(function(dt,i){ dt.className=(i===cur?'on':''); }); }
+    addEventListener('scroll',spy,{passive:true}); addEventListener('resize',spy); spy();
+  })();
+
+  /* Live York clock + availability pill */
+  (function(){ var pill=d.createElement('div'); pill.id='djClock'; B.appendChild(pill);
+    function upd(){ var et=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})); var h=et.getHours(); var open=(h>=8&&h<21); var tt=et.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}); pill.innerHTML='<span class="dot '+(open?'on':'off')+'"></span> York, PA · '+tt+' · '+(open?'Available':'Async'); }
+    upd(); setInterval(upd,30000);
+  })();
+})();

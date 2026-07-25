@@ -185,3 +185,31 @@ img{height:auto}
   .casehero,.cfig,.wthumb{break-inside:avoid}
   section{border:none}
 }
+
+/* ===== DJ interactive / 3D layer ===== */
+body.dj-ready{animation:djIn .55s ease both}
+@keyframes djIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#djProg{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--accent);z-index:120}
+.nav{transition:transform .35s ease}
+.nav.nav-hide{transform:translateY(-105%)}
+.nav-l a{position:relative}
+.nav-l a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1.5px;background:var(--accent);transition:right .28s ease}
+.nav-l a:hover::after,.nav-l a.active::after{right:0}
+.nav-l a.active{color:var(--accent)}
+.dj-cursor{position:fixed;top:0;left:0;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;pointer-events:none;z-index:131;background:radial-gradient(circle,rgba(30,70,53,.5),rgba(30,70,53,0) 70%);mix-blend-mode:multiply}
+.dj-cursor-ring{position:fixed;top:0;left:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid rgba(30,70,53,.35);border-radius:50%;pointer-events:none;z-index:130;transition:width .2s,height .2s,margin .2s,border-color .2s}
+.dj-cursor-ring.big{width:66px;height:66px;margin:-33px 0 0 -33px;border-color:rgba(30,70,53,.6)}
+.dj-tilt{transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;will-change:transform}
+.dj-spot{position:relative}
+.dj-spot::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(240px circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.3),transparent 62%);mix-blend-mode:soft-light}
+.dj-spot:hover::after{opacity:1}
+.btn,.proofbtn{transition:transform .18s ease,background .2s,color .2s,border-color .2s}
+#toTop{position:relative}
+#toTop .djring{position:absolute;inset:-5px;width:calc(100% + 10px);height:calc(100% + 10px);transform:rotate(-90deg);pointer-events:none}
+#toTop .djring circle{fill:none;stroke:var(--accent);stroke-width:2}
+.accent{background-image:linear-gradient(105deg,var(--accent) 0%,var(--accent) 42%,#3f855f 50%,var(--accent) 58%,var(--accent) 100%);background-size:220% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;transition:background-position .5s ease}
+.accent:hover{background-position:100% 0;-webkit-text-fill-color:transparent;color:transparent}
+.chips .c,.tag{transition:transform .18s ease,box-shadow .22s ease}
+.chips .c:hover,.tag:hover{transform:translateY(-2px)}
+@media (hover:none){.dj-cursor,.dj-cursor-ring{display:none!important}}
+@media (prefers-reduced-motion: reduce){.dj-cursor,.dj-cursor-ring,#djProg{display:none!important}.nav.nav-hide{transform:none}}

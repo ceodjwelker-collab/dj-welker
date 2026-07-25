@@ -241,3 +241,12 @@ body.dj-rave .accent{animation:djHue 1s linear infinite}
 #djClock .dot.off{background:#b9975b}
 @media (max-width:720px){#djClock,#djRail{display:none}}
 @media (prefers-reduced-motion:reduce){#djRail a{transition:none}#djPal.open{animation:none}}
+
+/* ===== DJ features batch 3 ===== */
+#djSigil{display:flex;align-items:center;gap:18px;margin:0 0 28px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+#djSigil canvas{width:120px;height:120px;flex:0 0 auto;border-radius:14px;background:rgba(30,70,53,.03);border:1px solid var(--line)}
+#djSigil .cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.02em;color:var(--muted);max-width:280px;line-height:1.7}
+#djSigil .cap b{color:var(--ink)}
+.wshot{overflow:hidden}
+.wshot::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 32%,rgba(63,133,95,.16) 46%,rgba(201,217,74,.22) 50%,rgba(63,133,95,.16) 54%,transparent 68%);transform:translateX(-130%);transition:transform .85s cubic-bezier(.2,.7,.2,1);mix-blend-mode:screen}
+.wshot:hover::before{transform:translateX(130%)}

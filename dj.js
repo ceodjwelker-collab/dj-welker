@@ -277,3 +277,28 @@ function djConstellation(cv, N){
     upd(); setInterval(upd,30000);
   })();
 })();
+
+/* ============ DJ Welker — features batch 3 (generative sigil · idle tip) ============ */
+(function(){ 'use strict';
+  var d=document,B=d.body, reduce=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Generative "mark of this visit" — flow-field sigil, unique each load */
+  (function(){ var f=d.querySelector('footer .wrap')||d.querySelector('footer'); if(!f)return;
+    var wrap=d.createElement('div'); wrap.id='djSigil';
+    wrap.innerHTML='<canvas aria-hidden="true"></canvas><div class="cap"><b>Generative mark</b><br>Unique to this visit — reload to regenerate a new one.</div>';
+    f.insertBefore(wrap, f.firstChild);
+    var cv=wrap.querySelector('canvas'), x=cv.getContext('2d'), S=260; cv.width=S; cv.height=S;
+    var seed=Math.random()*1000;
+    function fld(px,py){ return (Math.sin(px*0.03+seed)+Math.cos(py*0.028-seed*0.7)+Math.sin((px+py)*0.02+seed*1.3))*0.9; }
+    for(var i=0;i<440;i++){ var px=Math.random()*S, py=Math.random()*S, len=6+Math.random()*24; x.beginPath(); x.moveTo(px,py);
+      for(var s=0;s<len;s++){ var a=fld(px,py)*Math.PI; px+=Math.cos(a)*1.7; py+=Math.sin(a)*1.7; x.lineTo(px,py); }
+      x.lineWidth=0.7; x.strokeStyle='rgba(30,70,53,'+(0.05+Math.random()*0.14).toFixed(3)+')'; x.stroke(); }
+    for(var j=0;j<24;j++){ var nx=18+Math.random()*(S-36), ny=18+Math.random()*(S-36), r=1+Math.random()*3.4; x.beginPath(); x.arc(nx,ny,r,0,7); x.fillStyle=(Math.random()<0.28?'rgba(201,217,74,0.9)':'rgba(30,70,53,0.85)'); x.fill(); }
+  })();
+
+  /* Idle tip */
+  if(!reduce){ (function(){ var shown=false,t;
+    function reset(){ clearTimeout(t); if(shown)return; t=setTimeout(function(){ if(shown)return; shown=true; var el=d.createElement('div'); el.className='dj-toast'; el.innerHTML='Tip: press <b>/</b> to jump anywhere'; B.appendChild(el); setTimeout(function(){el.classList.add('show');},20); setTimeout(function(){el.classList.remove('show');setTimeout(function(){el.remove();},400);},4200); }, 15000); }
+    ['pointermove','scroll','keydown','click','touchstart'].forEach(function(ev){ addEventListener(ev,reset,{passive:true}); }); reset();
+  })(); }
+})();

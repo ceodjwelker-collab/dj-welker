@@ -201,7 +201,7 @@
       "featured": false,
       "draft": false,
       "case": true,
-      "live_url": "https://liftwave-delta.vercel.app",
+      "live_url": "https://liftwave.app",
       "summary": "One commercial DJ platform \u2014 visuals, mixing, soundboard, paid requests, earnings."
     },
     {
@@ -218,7 +218,7 @@
       "featured": true,
       "draft": false,
       "case": true,
-      "live_url": "https://auxtion-red.vercel.app",
+      "live_url": "https://auxtion.app",
       "summary": "Pay-to-play song-request app for DJs \u2014 Stripe Connect, 10% platform fee."
     },
     {

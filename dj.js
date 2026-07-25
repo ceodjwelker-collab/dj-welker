@@ -193,3 +193,41 @@ function djConstellation(cv, N){
     d.querySelectorAll('.wshot,.cfig,.casehero').forEach(function(el){ el.classList.add('dj-spot'); el.addEventListener('pointermove',function(e){ var r=el.getBoundingClientRect(); el.style.setProperty('--sx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%'); el.style.setProperty('--sy',((e.clientY-r.top)/r.height*100).toFixed(1)+'%'); }); });
   }
 })();
+
+/* ============ DJ Welker — crazy/unique layer ============ */
+(function(){ 'use strict';
+  var d=document, B=d.body;
+  var reduce=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var mpx=innerWidth/2,mpy=innerHeight/2; addEventListener('pointermove',function(e){mpx=e.clientX;mpy=e.clientY;},{passive:true});
+
+  /* A. headline scramble / decode on scroll-in */
+  (function(){ if(reduce||!('IntersectionObserver'in window))return;
+    var ch='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\<>*#%';
+    function scr(el){ var f=el.getAttribute('data-txt'),L=f.length,fr=0;
+      var iv=setInterval(function(){ var o=''; for(var i=0;i<L;i++){ o+=(f[i]===' ')?' ':(i<fr*1.6? f[i] : ch[Math.floor(Math.random()*ch.length)]); } el.textContent=o; fr++; if(fr>L/1.6+2){clearInterval(iv);el.textContent=f;} },28); }
+    var hs=[].slice.call(d.querySelectorAll('.sec-head h2, .case-head h1, .csec h2')).filter(function(el){return el.children.length===0 && el.textContent.trim().length>1 && el.textContent.trim().length<46;});
+    hs.forEach(function(el){ el.setAttribute('data-txt', el.textContent); });
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){scr(en.target);io.unobserve(en.target);}});},{threshold:0.55});
+    hs.forEach(function(el){io.observe(el);});
+  })();
+
+  /* B. cursor particle trail */
+  if(fine&&!reduce){ (function(){
+    var c=d.createElement('canvas'); c.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:118'; B.appendChild(c);
+    var x=c.getContext('2d'), DPR=Math.min(devicePixelRatio||1,2), ps=[], lx=mpx, ly=mpy;
+    function rz(){ c.width=innerWidth*DPR; c.height=innerHeight*DPR; } rz(); addEventListener('resize',rz);
+    addEventListener('pointermove',function(e){ var sp=Math.min(7,Math.hypot(e.clientX-lx,e.clientY-ly)/6); if(sp>0.7)ps.push({x:e.clientX,y:e.clientY,r:1.3+sp,life:1}); lx=e.clientX; ly=e.clientY; },{passive:true});
+    (function draw(){ x.clearRect(0,0,c.width,c.height); for(var i=ps.length-1;i>=0;i--){ var p=ps[i]; p.life-=0.05; if(p.life<=0){ps.splice(i,1);continue;} x.globalAlpha=p.life*0.45; x.fillStyle='#1E4635'; x.beginPath(); x.arc(p.x*DPR,p.y*DPR,p.r*DPR*p.life,0,7); x.fill(); } x.globalAlpha=1; requestAnimationFrame(draw); })();
+  })(); }
+
+  /* C. Konami / "dj" easter egg -> DJ MODE */
+  (function(){ var seq=['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'], buf=[], typed='';
+    function toast(t){ var el=d.createElement('div'); el.className='dj-toast'; el.textContent=t; B.appendChild(el); setTimeout(function(){el.classList.add('show');},20); setTimeout(function(){el.classList.remove('show');setTimeout(function(){el.remove();},400);},2600); }
+    function burst(){ var c=d.createElement('canvas'); c.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:140'; B.appendChild(c); var x=c.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2); c.width=innerWidth*DPR;c.height=innerHeight*DPR; var cx=innerWidth/2*DPR,cy=innerHeight*0.4*DPR,cols=['#1E4635','#3f855f','#c9d94a','#F4F0E6'],ps=[]; for(var i=0;i<150;i++){var a=Math.random()*7,s=(3+Math.random()*10)*DPR;ps.push({x:cx,y:cy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4*DPR,r:(2+Math.random()*4)*DPR,c:cols[i%4],life:1});}
+      (function dd(){ x.clearRect(0,0,c.width,c.height); var al=false; ps.forEach(function(p){ if(p.life<=0)return; al=true; p.vy+=0.35*DPR; p.x+=p.vx; p.y+=p.vy; p.life-=0.012; x.globalAlpha=Math.max(0,p.life); x.fillStyle=p.c; x.beginPath(); x.arc(p.x,p.y,p.r,0,7); x.fill(); }); x.globalAlpha=1; if(al)requestAnimationFrame(dd); else c.remove(); })(); }
+    function fire(){ if(B.classList.contains('dj-rave'))return; B.classList.add('dj-rave'); toast('DJ MODE'); burst(); setTimeout(function(){B.classList.remove('dj-rave');},6000); }
+    addEventListener('keydown',function(e){ var k=(e.key||'').toLowerCase(); buf.push(k); if(buf.length>seq.length)buf.shift(); if(buf.length===seq.length&&seq.every(function(s,i){return buf[i]===s;}))fire();
+      var t=e.target||{}; var typing=/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName||'')||t.isContentEditable; if(!typing&&/^[a-z]$/.test(k)){ typed=(typed+k).slice(-4); if(typed==='rave'||typed.slice(-2)==='dj'&&typed.length>=2&&/dj$/.test(typed)){ if(typed.slice(-2)==='dj')fire(); } if(typed==='rave')fire(); } });
+  })();
+})();

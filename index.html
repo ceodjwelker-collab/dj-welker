@@ -191,32 +191,39 @@
   var renderer;
   try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); }catch(e){ return; }
   renderer.setClearColor(0x000000,0);
-  var PINE=0x1E4635, CREAM=0xF4F0E6;
-  var scene=new THREE.Scene(); scene.fog=new THREE.Fog(CREAM, 9, 30);
+  var PR=Math.min(window.devicePixelRatio||1,2); renderer.setPixelRatio(PR);
+  var PINE=new THREE.Color(0x1E4635), CREAM=new THREE.Color(0xF4F0E6);
+  var scene=new THREE.Scene(); scene.fog=new THREE.Fog(0xF4F0E6, 9, 30);
   var camera=new THREE.PerspectiveCamera(60,1,0.1,120); camera.position.z=14;
   var GROUP=new THREE.Group(); scene.add(GROUP);
-  /* soft round glow sprite */
+  /* soft round alpha sprite (colored in shader) */
   var sc=document.createElement('canvas'); sc.width=sc.height=64;
   var sx=sc.getContext('2d'), g=sx.createRadialGradient(32,32,0,32,32,32);
-  g.addColorStop(0,'rgba(30,70,53,1)'); g.addColorStop(0.45,'rgba(30,70,53,0.8)'); g.addColorStop(1,'rgba(30,70,53,0)');
+  g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(0.4,'rgba(255,255,255,0.72)'); g.addColorStop(1,'rgba(255,255,255,0)');
   sx.fillStyle=g; sx.beginPath(); sx.arc(32,32,32,0,7); sx.fill();
   var sprite=new THREE.CanvasTexture(sc);
-  var N=reduce?56:96, R=9.5, pts=[];
-  var geo=new THREE.BufferGeometry(), pos=new Float32Array(N*3);
+  var N=reduce?60:100, R=9.5, pts=[];
+  var geo=new THREE.BufferGeometry(), pos=new Float32Array(N*3), sizes=new Float32Array(N);
   for(var i=0;i<N;i++){
     var v=new THREE.Vector3((Math.random()*2-1)*R,(Math.random()*2-1)*R*0.6,(Math.random()*2-1)*R*0.65);
-    v.vel=new THREE.Vector3((Math.random()-0.5)*0.006,(Math.random()-0.5)*0.006,(Math.random()-0.5)*0.006);
+    v.vel=new THREE.Vector3((Math.random()-0.5)*0.0055,(Math.random()-0.5)*0.0055,(Math.random()-0.5)*0.0055);
     pts.push(v); pos[i*3]=v.x;pos[i*3+1]=v.y;pos[i*3+2]=v.z;
+    sizes[i]=(Math.random()<0.15)?(3.6+Math.random()*2.4):(1.0+Math.random()*1.4);
   }
   geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
-  GROUP.add(new THREE.Points(geo,new THREE.PointsMaterial({map:sprite,color:PINE,size:0.62,sizeAttenuation:true,transparent:true,opacity:0.95,depthWrite:false,fog:true})));
+  geo.setAttribute('aSize',new THREE.BufferAttribute(sizes,1));
+  var uniforms={uTex:{value:sprite},uColor:{value:PINE},uFogCol:{value:CREAM},uNear:{value:9.0},uFar:{value:30.0},uPR:{value:PR}};
+  var mat=new THREE.ShaderMaterial({uniforms:uniforms,transparent:true,depthWrite:false,
+    vertexShader:'attribute float aSize;uniform float uPR;uniform float uNear;uniform float uFar;varying float vF;void main(){vec4 mv=modelViewMatrix*vec4(position,1.0);float d=-mv.z;vF=clamp((d-uNear)/(uFar-uNear),0.0,1.0);gl_PointSize=aSize*uPR*(82.0/d);gl_Position=projectionMatrix*mv;}',
+    fragmentShader:'uniform sampler2D uTex;uniform vec3 uColor;uniform vec3 uFogCol;varying float vF;void main(){float a=texture2D(uTex,gl_PointCoord).a;vec3 c=mix(uColor,uFogCol,vF*0.9);gl_FragColor=vec4(c,a*(1.0-vF*0.82));}'});
+  GROUP.add(new THREE.Points(geo,mat));
   var lgeo=new THREE.BufferGeometry();
-  GROUP.add(new THREE.LineSegments(lgeo,new THREE.LineBasicMaterial({color:PINE,transparent:true,opacity:0.28,fog:true})));
+  GROUP.add(new THREE.LineSegments(lgeo,new THREE.LineBasicMaterial({color:0x1E4635,transparent:true,opacity:0.2,fog:true})));
   var mx=0,my=0,tmx=0,tmy=0;
   window.addEventListener('pointermove',function(e){ tmx=(e.clientX/window.innerWidth-0.5); tmy=(e.clientY/window.innerHeight-0.5); },{passive:true});
-  function resize(){var p=cv.parentNode,w=p.clientWidth,h=p.clientHeight||520; renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2)); renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();}
+  function resize(){var p=cv.parentNode,w=p.clientWidth,h=p.clientHeight||520; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();}
   window.addEventListener('resize',resize); resize();
-  var MAXD=3.7, run=true;
+  var MAXD=3.6, run=true;
   document.addEventListener('visibilitychange',function(){ run=!document.hidden; if(run&&!reduce) requestAnimationFrame(tick); });
   function build(){
     var seg=[],pa=geo.attributes.position.array;
@@ -236,8 +243,8 @@
     }
     geo.attributes.position.needsUpdate=true; build();
     var t=Date.now();
-    GROUP.rotation.y+=0.0015; GROUP.rotation.x=Math.sin(t*0.00007)*0.1;
-    var s=1+Math.sin(t*0.0006)*0.03; GROUP.scale.set(s,s,s);
+    GROUP.rotation.y+=0.0011; GROUP.rotation.x=Math.sin(t*0.00006)*0.085;
+    var s=1+Math.sin(t*0.0006)*0.022; GROUP.scale.set(s,s,s);
     mx+=(tmx-mx)*0.045; my+=(tmy-my)*0.045;
     camera.position.x=mx*3.4; camera.position.y=-my*2.4; camera.lookAt(0,0,0);
     renderer.render(scene,camera);

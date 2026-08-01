@@ -245,7 +245,7 @@ export const projects: Project[] = [
       'The live request line that pays. Guests scan a QR, search a real song, and pay to move up a transparent priority queue; the DJ approves what plays and rejected paid requests auto-refund. Real backend — Supabase, realtime, Stripe Connect, server-enforced fee. Self-built; no paying operators yet.',
     proof:
       'Functional app plus a marketing site, on real payment infrastructure (Supabase + Stripe Connect, server-enforced fee, refund logic). Self-built concept — not a launched client.',
-    liveUrl: 'https://auxtion-red.vercel.app',
+    liveUrl: 'https://auxtion-ceosceo.vercel.app',
     thumb: '/assets/shots/auxtion-live.jpg',
     kicker: 'Case study · Live request app · Payments · DJ / nightlife',
     tagline:
@@ -297,7 +297,7 @@ export const projects: Project[] = [
       'One live show system — audio-reactive visuals, mixing, a soundboard, paid requests, and earnings unified into a single browser-based app instead of six disconnected tools. A working audio/visual engine DJ runs at his own gigs; the surrounding platform is in build.',
     proof:
       'Working browser audio/visual engine used at live gigs; AUXTION is the live paid-requests module. Unified SaaS is in build. Self-built concept.',
-    liveUrl: 'https://liftwave-delta.vercel.app',
+    liveUrl: 'https://liftwave-ceosceo.vercel.app',
     thumb: '/assets/shots/liftwave-live.jpg',
     kicker: 'Case study · DJ SaaS platform · Product architecture',
     tagline:

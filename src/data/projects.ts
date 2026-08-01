@@ -450,11 +450,13 @@ export const projects: Project[] = [
     hasCase: true,
     proofStatus: 'LAUNCHED',
     summary:
-      'Marketing and content for a traveling 21+ mobile bar that runs events across the mid-Atlantic — Instagram content, short-form, and event promotion built to turn attention into booked events.',
+      'Marketing and content for The Mobile Bar — a traveling 21+ bar that “brings the party” to weddings, parties, and events across the mid-Atlantic. Instagram content, short-form, and event promotion built to turn attention into booked dates.',
     proof:
-      'Active client content engagement — running the Instagram content system, short-form, and event promotion for a live events business. Exact business name and metrics pending confirmation with the client.',
+      'An active, ongoing client content engagement — running the Instagram content system, short-form, and event promotion for The Mobile Bar, a live traveling-bar business.',
     instagram: 'https://instagram.com/themobilebar247',
-    thumb: undefined,
+    thumb: '/assets/logos/mobile-bar-logo.png',
+    thumbContain: true,
+    thumbBg: '#000000',
     kicker: 'Case study · Mobile bar · Social marketing & content',
     tagline:
       'The bar that travels. Marketing and content for a mobile bar that brings a full 21+ bar experience to events across Pennsylvania and the mid-Atlantic — built to turn attention into booked events.',
@@ -478,12 +480,12 @@ export const projects: Project[] = [
       { n: '02', title: 'Short-form / reels', desc: 'Event footage cut into scroll-stopping reels that show the vibe in seconds and travel further than static posts.' },
       { n: '03', title: 'Event promotion', desc: 'Promoting upcoming dates and open availability, and turning past events into proof that books the next one.' },
       { n: '04', title: 'Booking funnel', desc: 'Making the path from a post to a DM to a booked date obvious — clear calls to action and a consistent way to inquire.' },
-      { n: '05', title: 'Brand consistency', desc: 'One voice, one look, one promise — “the bar that travels” — held steady across every post and caption.' },
+      { n: '05', title: 'Brand consistency', desc: 'One voice, one look, one promise — “we bring the party” — held steady across every post and caption.' },
       { n: '06', title: 'Audience', desc: 'Growing and engaging the following, and keeping it warm so the audience converts.' },
     ],
     deliverables: ['Instagram content', 'Reels / short-form', 'Event promotion', 'Brand voice', 'Audience growth'],
     proofNote:
-      '◉ Proof: an active, ongoing client content engagement — running the Instagram content system, short-form, and event promotion for a live business. The exact registered business name (and any audience figures) are pending confirmation with the client.',
+      '◉ Proof: a real, active client content engagement — the Instagram content system, short-form, and event promotion for The Mobile Bar. Audience figures are kept off the site until the client confirms them.',
     closing: [
       'An events business does not need more content — it needs content that does a job. Every post is aimed at one of two outcomes: build the brand, or book a date.',
     ],

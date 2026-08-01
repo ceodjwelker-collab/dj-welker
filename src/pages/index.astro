@@ -28,10 +28,10 @@ const feat = featured;
   </div>
   <div class="home-intro__art" aria-label="A selection of DJ Welker's work">
     <div class="home-intro__line"></div>
-    <figure class="home-intro__portrait"><img src="/assets/shots/dj-3.jpg" alt="DJ Welker" fetchpriority="high" width="750" height="1000" /></figure>
+    <figure class="home-intro__canvas"><img src="/assets/shots/ce-os-live.jpg" alt="CE OS live studio website" fetchpriority="high" width="1200" height="750" /><div class="home-intro__brandmark"><img src="/assets/logos/ce-os-navbar-logo.png" alt="CE OS logo" width="384" height="182" /></div></figure>
     <a class="home-intro__case" href="/work/ce-os" aria-label="Read the CE OS case study">
-      <img src="/assets/shots/ce-os-live.jpg" alt="CE OS website project" width="1200" height="750" />
-      <span><b>CE OS</b><small>Creative + operating system</small></span>
+      <img src="/assets/shots/auxtion-live.jpg" alt="AUXTION product interface" width="1200" height="750" />
+      <span><b>AUXTION</b><small>Live product system</small></span>
     </a>
     <div class="home-intro__monogram" aria-hidden="true"><span>DJ</span><small>01 / 26</small></div>
   </div>
@@ -103,7 +103,12 @@ const feat = featured;
 
 <!-- ABOUT SNIPPET -->
 <section class="pad"><div class="wrap homeabout">
-  <img src="/assets/shots/dj-2.jpg" alt="DJ Welker, York PA" class="pimg" loading="lazy" decoding="async" width="825" height="1100" />
+  <div class="homeabout__system" aria-label="DJ Welker brand systems">
+    <div class="homeabout__tile homeabout__tile--ce"><img src="/assets/logos/ce-os-navbar-logo.png" alt="CE OS logo" loading="lazy" width="384" height="182" /></div>
+    <div class="homeabout__tile"><img src="/assets/logos/auxtion-mark.svg" alt="AUXTION Signal A logo" loading="lazy" /></div>
+    <div class="homeabout__tile"><img src="/assets/logos/liftwave-logo.svg" alt="LIFTWAVE logo" loading="lazy" /></div>
+    <div class="homeabout__tile"><img src="/assets/logos/shiftly-mark.png" alt="Shiftly Punch Track logo" loading="lazy" /></div>
+  </div>
   <div>
     <span class="eyebrow">About</span>
     <p style="font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;margin-top:18px">DJ Welker is a self-taught creative director, designer, and maker in York, PA — an operator, a builder, and a founder. He works across brand, product, content, and operations: the visible identity and the invisible system behind it, with direct access to the person doing the work.</p>
@@ -111,11 +116,11 @@ const feat = featured;
   </div>
 </div></section>
 
-<!-- PORTRAIT STRIP -->
-<section style="background:var(--ink);border:none"><div class="wrap" style="padding:0"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
-  <img src="/assets/shots/dj-3.jpg" alt="DJ Welker — York, PA" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 28%;display:block" width="750" height="1000" />
-  <img src="/assets/shots/dj-1.jpg" alt="DJ Welker" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 22%;display:block" width="750" height="1000" />
-  <img src="/assets/shots/dj-2.jpg" alt="DJ Welker" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 22%;display:block" width="750" height="1000" />
+<!-- WORK STRIP -->
+<section class="home-workstrip"><div class="wrap"><div class="home-workstrip__head"><span class="eyebrow">Built systems, not stock signals</span><a href="/work">View the archive <span class="ar">→</span></a></div><div class="home-workstrip__grid">
+  <img src="/assets/shots/titanium-live.jpg" alt="Titanium Detailing live work" loading="lazy" decoding="async" width="1200" height="750" />
+  <img src="/assets/shots/shiftly-live.jpg" alt="Shiftly product interface" loading="lazy" decoding="async" width="1200" height="750" />
+  <img src="/assets/shots/liftwave-live.jpg" alt="LIFTWAVE product interface" loading="lazy" decoding="async" width="1200" height="750" />
 </div></div></section>
 
 </main>
@@ -152,9 +157,11 @@ const feat = featured;
   .home-intro__roles span:last-child{border-right:0}
   .home-intro__art{position:relative;min-height:min(57vw,650px);padding:24px 0 0 24px}
   .home-intro__line{position:absolute;inset:0 9% auto 0;height:1px;background:var(--ink)}
-  .home-intro__portrait{position:absolute;top:24px;right:9%;bottom:0;left:13%;overflow:hidden;background:var(--ink)}
-  .home-intro__portrait img{width:100%;height:100%;object-fit:cover;object-position:center 23%;filter:grayscale(.22) contrast(1.06)}
-  .home-intro__portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(17,17,16,.46))}
+  .home-intro__canvas{position:absolute;top:24px;right:9%;bottom:0;left:13%;overflow:hidden;background:#090c10}
+  .home-intro__canvas>img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.72}
+  .home-intro__canvas::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(5,9,17,.08),rgba(5,8,13,.72))}
+  .home-intro__brandmark{position:absolute;z-index:1;top:50%;left:50%;width:min(76%,380px);transform:translate(-50%,-50%);padding:16px;background:rgba(5,8,13,.56);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+  .home-intro__brandmark img{width:100%;height:auto}
   .home-intro__case{position:absolute;z-index:2;left:0;bottom:5%;display:block;width:min(56%,260px);background:var(--card);border:1px solid var(--ink);box-shadow:9px 9px 0 var(--accent)}
   .home-intro__case img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
   .home-intro__case span{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
@@ -162,6 +169,14 @@ const feat = featured;
   .home-intro__monogram{position:absolute;right:0;bottom:11%;z-index:3;display:grid;gap:6px;padding:13px 15px;background:var(--accent);color:var(--paper)}
   .home-intro__monogram span{font-family:var(--display);font-size:2.5rem;font-weight:700;line-height:.8;letter-spacing:-.1em}
   .home-intro__monogram small{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em}
+  .homeabout__system{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-self:stretch;background:#07090d;padding:8px;border:1px solid var(--line);border-radius:6px}
+  .homeabout__tile{display:flex;align-items:center;justify-content:center;min-height:170px;padding:24px;background:#0d1014}
+  .homeabout__tile--ce{grid-column:1 / -1;background:#080b10}
+  .homeabout__tile img{max-width:78%;max-height:108px;object-fit:contain}
+  .homeabout__tile--ce img{max-width:84%;max-height:116px}
+  .home-workstrip{padding:0 0 72px;background:var(--ink);border:none;color:var(--paper)}
+  .home-workstrip__head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0 16px}.home-workstrip__head .eyebrow{color:rgba(244,240,230,.62)}.home-workstrip__head a{font-family:var(--display);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .home-workstrip__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}.home-workstrip__grid img{width:100%;height:clamp(190px,25vw,340px);object-fit:cover;object-position:top;display:block}
   @media(max-width:900px){.home-intro__grid{grid-template-columns:1fr;align-items:start}.home-intro__art{max-width:620px;min-height:560px;margin-left:auto;width:100%}.home-intro h1{max-width:10.5ch}}
-  @media(max-width:560px){.home-intro{padding-top:46px}.home-intro__topline{align-items:flex-start;flex-direction:column;gap:9px;margin-bottom:38px}.home-intro__topline>span:last-child{border-left:0;padding-left:0}.home-intro h1{font-size:clamp(3.3rem,15.5vw,4.8rem)}.home-intro__roles{margin-top:34px}.home-intro__roles span{width:100%;margin:0;padding:11px 0;border-right:0;border-bottom:1px solid var(--line)}.home-intro__roles span:last-child{border-bottom:0}.home-intro__art{min-height:430px;padding-left:16px}.home-intro__portrait{left:9%;right:4%}.home-intro__case{width:57%;box-shadow:6px 6px 0 var(--accent)}.home-intro__case span{display:block;line-height:1.6}.home-intro__case small{display:block}.home-intro__monogram{right:0;bottom:9%;padding:10px 12px}.home-intro__monogram span{font-size:2rem}}
+  @media(max-width:560px){.home-intro{padding-top:46px}.home-intro__topline{align-items:flex-start;flex-direction:column;gap:9px;margin-bottom:38px}.home-intro__topline>span:last-child{border-left:0;padding-left:0}.home-intro h1{font-size:clamp(3.3rem,15.5vw,4.8rem)}.home-intro__roles{margin-top:34px}.home-intro__roles span{width:100%;margin:0;padding:11px 0;border-right:0;border-bottom:1px solid var(--line)}.home-intro__roles span:last-child{border-bottom:0}.home-intro__art{min-height:430px;padding-left:16px}.home-intro__canvas{left:9%;right:4%}.home-intro__case{width:57%;box-shadow:6px 6px 0 var(--accent)}.home-intro__case span{display:block;line-height:1.6}.home-intro__case small{display:block}.home-intro__monogram{right:0;bottom:9%;padding:10px 12px}.home-intro__monogram span{font-size:2rem}.homeabout__tile{min-height:125px;padding:16px}.home-workstrip{padding-bottom:44px}.home-workstrip__grid{grid-template-columns:1fr}.home-workstrip__grid img{height:220px}}
 </style>

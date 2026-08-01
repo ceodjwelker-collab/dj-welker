@@ -10,19 +10,20 @@ interface Mark {
   labelKind: 'self' | 'client' | 'progress';
 }
 
+// Marks pulled live from the actual product sites (real, current logos — not re-hosted).
 const marks: Mark[] = [
-  { name: 'AUXTION', file: '/assets/logos/auxtion-mark.svg', bg: '#080A0F', note: 'The “Signal A” — a custom A built from an upward signal path with a bright queue node.', label: 'Self-designed · own venture', labelKind: 'self' },
-  { name: 'Shiftly', file: '/assets/logos/shiftly-mark.png', bg: '#0E0F11', note: 'The “Punch Track” S — a clock-in mark for the hourly-business operations OS.', label: 'Self-designed · own venture', labelKind: 'self' },
-  { name: 'LIFTWAVE', file: '/assets/logos/liftwave-logo.svg', bg: '#090A0C', note: 'A focus/cue-control mark and wordmark for the live DJ show system.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'CE OS', file: 'https://www.ce-os.com/assets/logos/ceos-navbar-logo.png', bg: '#0a0e1a', note: 'The studio wordmark, pulled live from ce-os.com — the creative + production studio and systems builder.', label: 'Self-designed · own studio', labelKind: 'self' },
+  { name: 'AUXTION', file: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FqQlLrfAsH1E2u50dNBUwqQOYT/hf_20260721_221913_7dfd1fea-986c-4bc9-94ee-62c38d4d18bd.png', bg: '#080A0F', note: 'The “Signal A” for the pay-to-play request app — pulled live from AUXTION.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'Shiftly', file: 'https://nzuagqfwvmxccvlzjdrj.supabase.co/storage/v1/object/public/site/shiftly-mark.png', bg: '#0E0F11', note: 'The “Punch Track” S — the clock-in mark for the hourly-business OS. Pulled live from Shiftly.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'STAKE', file: 'https://stakeos.vercel.app/stake-wordmark.png', bg: '#0a1310', note: 'The wordmark for the real-estate deal engine. Pulled live from STAKE.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'LIFTWAVE', file: 'https://liftwave-delta.vercel.app/liftwave-logo.svg', bg: '#090A0C', note: 'The cue-control mark for the live DJ show system. Pulled live from LIFTWAVE.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'Thrown After', file: 'https://thrownafter.com/__l5e/assets-v1/e57d39ce-4f6f-4a52-b35c-fe75200fbe94/thrown-after-mark.png', bg: '#0b0b0d', note: 'The “TA” mark for the community discovery platform. Pulled live from ThrownAfter.', label: 'Self-designed · side app', labelKind: 'self' },
   { name: 'ScrollStop', file: '/assets/logos/scrollstop-wordmark.png', bg: '#F4F0E6', note: 'A heavy condensed wordmark for the TikTok-first “cool finds” store.', label: 'Self-designed · own venture', labelKind: 'self' },
-  { name: 'Thrown After', file: '/assets/logos/thrown-after-mark.png', bg: '#0b0b0d', note: 'The “TA” monogram for the community discovery platform.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'Top Flavorz Grill', file: '/assets/logos/top-flavorz-logo.png', bg: '#050505', note: 'Client-approved logo delivered with the full brand & content guide.', label: 'Client · approved', labelKind: 'client' },
   { name: 'TSO', bg: '#0b0b0d', note: 'The apparel wordmark for a one-of-one custom + curated-resale brand.', label: 'Self-designed · own venture', labelKind: 'self' },
-  { name: 'CE OS', file: '/assets/logos/ce-os-logo.svg', bg: '#050506', note: 'The studio’s chrome mark — a working identity; a refined mark is in progress.', label: 'Self-designed · own studio', labelKind: 'self' },
-  { name: 'Top Flavorz Grill', file: '/assets/logos/top-flavorz-logo.png', bg: '#050505', note: 'Client-approved logo delivered with the full brand & content guide. Not redrawn here.', label: 'Client · approved', labelKind: 'client' },
-  // placeholders — no mark yet, never faked
-  { name: 'STAKE', bg: '#0a1310', note: 'Real-estate acquisition OS. Identity still in progress — the product ships UI-first.', label: 'Mark in progress', labelKind: 'progress' },
-  { name: 'Titanium Detailing', bg: '#0b0b0d', note: 'Client “T” emblem lives in the live build (matte black / titanium silver). No standalone file to show.', label: 'Client · in the live build', labelKind: 'progress' },
-  { name: 'PLUG', bg: '#101014', note: 'TikTok Shop content engine. A UI-only concept — no standalone mark yet.', label: 'Mark in progress', labelKind: 'progress' },
+  // typographic / in-progress marks — never faked
+  { name: 'Titanium Detailing', bg: '#0b0b0d', note: 'Client “T” wordmark — a text-based identity in the live build (matte black / titanium silver).', label: 'Client · in the live build', labelKind: 'progress' },
+  { name: 'PLUG', bg: '#101014', note: 'TikTok Shop content engine. A UI-only concept — mark in progress.', label: 'Mark in progress', labelKind: 'progress' },
   { name: 'CARBYN', bg: '#0d0b12', note: 'Music / artist alias. Long-game brand — mark not yet designed.', label: 'Mark in progress', labelKind: 'progress' },
 ];
 ---

@@ -129,47 +129,47 @@ export const projects: Project[] = [
     hasCase: true,
     proofStatus: 'LAUNCHED',
     summary:
-      'A founder-run operating-system studio — brand, website, workflows, and software built as one connected operation across Build, Connect, Automate, and Run. Everything works together; the client owns the result.',
+      'A founder-run creative and production studio that builds the system behind a business — brand, video, AI creative, websites, and the connected operations that tie them together. 100+ productized deliverables starting at $29, most shipping in 48 hours, and you own every file. One verified paying client so far (Titanium Detailing).',
     proof:
-      'Live public site, 49 Stripe services + 9 bundles, a Command Center, and a lead-site factory — with one verified paying client (Titanium Detailing).',
-    liveUrl: 'https://ceos.ceo',
+      'Live public studio at ce-os.com — 100+ deliverables from $29, ships in 48h, you own every file — plus a Command Center that runs the studio. One verified paying client (Titanium Detailing).',
+    liveUrl: 'https://ce-os.com',
     thumb: '/assets/shots/ce-os-live.jpg',
-    kicker: 'Case study · Studio + product company · Parent brand',
+    kicker: 'Case study · Creative + production studio & systems builder · Parent brand',
     tagline:
-      'The connected system behind a business. CE OS builds the brand, website, workflows, and software as one operation — Build, Connect, Automate, Run — and ships its own products on the same rails. Everything works together; you own the result.',
+      'Build the system behind the business. CE OS is a creative and production studio — brand, video, AI creative, and websites — wired into the operations that run underneath them. 100+ deliverables from $29, most shipping in 48 hours, and you own every file.',
     facts: [
       { l: 'Venture', v: 'CE OS' },
       { l: 'Year', v: '2026' },
       { l: 'Status', v: 'Active studio' },
-      { l: 'Live at', v: 'ceos.ceo', href: 'https://ceos.ceo' },
+      { l: 'Live at', v: 'ce-os.com', href: 'https://ce-os.com' },
       { l: 'Role', v: 'Founder · builder, start to finish' },
-      { l: 'Model', v: 'Agency + product studio' },
-      { l: 'Pillars', v: 'Build · Connect · Automate · Run' },
-      { l: 'Base', v: 'York, PA + remote' },
+      { l: 'Model', v: 'Creative + production studio' },
+      { l: 'Catalog', v: '100+ deliverables from $29' },
+      { l: 'Turnaround', v: 'Ships in 48h' },
     ],
     problemHeading: 'The idea',
     problem: [
-      'Most small businesses do not have a marketing problem. They have a disconnected-tools problem — a site here, leads in an inbox, a booking app, a spreadsheet, payments somewhere else — and they lose leads between the gaps and look unfinished.',
-      'CE OS is built around one answer: connect the brand, the website, the leads, the workflows, the payments, and the reporting into one operation the owner actually owns. It runs as two things at once — a studio that builds this for clients, and a company that ships its own products on the same system.',
+      'Most small businesses do not have a marketing problem. They have a disconnected-tools problem — a brand here, a video guy there, a website, leads in an inbox, payments somewhere else — and the pieces never add up to one operation. The work looks unfinished and leads fall through the gaps.',
+      'CE OS answers it as a creative and production studio that also builds the plumbing: brand, video, AI creative, and websites on the surface, and the connected operations — CRM, forms, payments, automation, reporting — underneath. It is productized so a business can buy exactly what it needs (100+ deliverables from $29, most shipping in 48 hours) and own every file when it is done.',
     ],
     systemHeading: 'What I built',
     systemBuilt: [
-      { n: '01', title: 'Build', desc: 'Brands, websites, portals, graphics, media, and applications — the visible surface of the business.' },
-      { n: '02', title: 'Connect', desc: 'CRM, forms, calendars, payments, files, and APIs, wired so nothing falls through the gaps.' },
-      { n: '03', title: 'Automate', desc: 'Follow-up, scheduling, proposals, reviews, and reporting — the repetitive work, gone.' },
-      { n: '04', title: 'Run', desc: 'Dashboards, analytics, SOPs, and continuous improvement so the system keeps getting better.' },
-      { n: '05', title: 'Command Center', desc: 'A private internal hub — scored leads, quote builder, and CRM-wired status — that runs the studio.' },
-      { n: '06', title: 'Product portfolio', desc: 'Shiftly, STAKE, PLUG, AUXTION, and more, built on the same rails as the client work.' },
+      { n: '01', title: 'Build', desc: 'Brands, websites, video, AI creative, graphics, and applications — the visible surface of the business, produced in-house.' },
+      { n: '02', title: 'Connect', desc: 'CRM, forms, calendars, payments, files, and APIs, wired so a lead never falls between two tools.' },
+      { n: '03', title: 'Automate', desc: 'Follow-up, scheduling, proposals, reviews, and reporting — the repetitive work handled without anyone touching it.' },
+      { n: '04', title: 'Run', desc: 'Dashboards, analytics, SOPs, and continuous improvement so the system keeps getting sharper after launch.' },
+      { n: '05', title: 'Productized catalog', desc: '100+ deliverables starting at $29, sold as fixed-scope packages that ship in 48 hours, with a plain-English agreement, no lock-in, and full ownership — you own every file.' },
+      { n: '06', title: 'Command Center', desc: 'A private internal hub — scored leads, a quote builder, and CRM-wired status — that runs the studio and its own product portfolio (Shiftly, STAKE, AUXTION, LIFTWAVE, PLUG).' },
     ],
     figures: [
-      { src: '/assets/shots/ceos-dark.jpg', alt: 'CE OS mark on dark', caption: 'The CE OS identity that ties the studio and its products together. (Current chrome mark is a working identity — a refined mark is in progress.)', dark: true },
+      { src: '/assets/shots/ceos-dark.jpg', alt: 'CE OS mark on dark', caption: 'The CE OS identity that ties the studio and its products together.', dark: true },
       { src: '/assets/shots/ceos-emblem.png', alt: 'CE OS emblem', caption: 'The emblem extended across product and social surfaces.', dark: true },
     ],
-    deliverables: ['Live site (ceos.ceo)', '49 Stripe services', '9 bundles', 'Command Center', 'Lead-site factory'],
+    deliverables: ['Live studio (ce-os.com)', '100+ deliverables from $29', 'Ships in 48h', 'You own every file', 'Command Center'],
     proofNote:
-      '◉ Proof: an active studio with a live public site, 49 live Stripe services plus 9 bundles, and one verified paying client (Titanium Detailing). Its own products sit at varying stages and are labeled honestly on each case page — concept, building, or live infrastructure.',
+      '◉ Proof: an active studio with a live public site at ce-os.com — 100+ productized deliverables from $29, a 48-hour turnaround, and full file ownership — plus a Command Center that runs it. One verified paying client (Titanium Detailing). Its own products sit at varying stages and are labeled honestly on each case page — concept, building, or live infrastructure.',
     closing: [
-      'CE OS is the clearest proof of the whole thesis: not decorating a business, but building the identity, the experience, the tools, and the operation behind it — as one connected system rather than six disconnected vendors.',
+      'CE OS is the clearest proof of the whole thesis: not decorating a business, but building the identity, the creative, the tools, and the operation behind it — as one connected system rather than six disconnected vendors.',
     ],
   },
   {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
       'A live operations system for hourly businesses — POS, crew, tips, scheduling, and online orders in one view for fair stands, food trucks, pop-ups, and independent shops. Installable, offline-first, with no per-transaction markup. Built and working; no paying customers yet.',
     proof:
       'Real working POS, live board, clock, and tips — but no real customers yet. Self-built concept, not a launched client. Founding offer: first 5 businesses $49/mo lifetime for a testimonial.',
-    liveUrl: undefined,
+    liveUrl: 'https://shiftlyhq.vercel.app',
     thumb: '/assets/shots/shiftly-live.jpg',
     kicker: 'Case study · Live operations system for hourly business · SaaS (concept)',
     tagline:
@@ -349,7 +349,7 @@ export const projects: Project[] = [
       'A real-estate acquisition OS — analyze a deal in seconds (MAO, ARV, repairs, ROI, risk score), run the pipeline from lead to paid, auto-generate contracts, and manage cash buyers in one workspace. A private tool in build; no customers.',
     proof:
       'A working deal-math engine with real formulas (MAO/ARV/ROI/risk), a pipeline CRM, and contract generation. Private self-built concept, in build.',
-    liveUrl: undefined,
+    liveUrl: 'https://stakeos.vercel.app',
     thumb: '/assets/shots/stake-live.jpg',
     kicker: 'Case study · Real-estate acquisition OS · SaaS (concept)',
     tagline:
@@ -491,7 +491,6 @@ export const projects: Project[] = [
     ],
   },
 
-  // ---- Overview-only ventures (no full case page yet) ----
   {
     slug: 'top-flavorz',
     title: 'Top Flavorz Grill',
@@ -502,7 +501,7 @@ export const projects: Project[] = [
     categories: ['brand', 'campaign'],
     featured: false,
     draft: false,
-    hasCase: false,
+    hasCase: true,
     proofStatus: 'LAUNCHED',
     summary:
       'A delivered client brand + content system for a Carlisle grill — a full Viral Instagram Brand & Content Guide: positioning “Carlisle’s Loudest Plate,” the tagline “Flavor that hits different,” a 5-part viral formula, owned series, and a 30-day launch. Approved logo in hand.',
@@ -511,6 +510,41 @@ export const projects: Project[] = [
     thumb: '/assets/logos/top-flavorz-logo.png',
     thumbContain: true,
     thumbBg: '#050505',
+    kicker: 'Case study · Grill / food brand · Carlisle, PA · Client deliverable',
+    tagline:
+      'Carlisle’s Loudest Plate. A local grill with great food and a quiet feed. I delivered a full Viral Instagram Brand & Content Guide — a positioning line, a repeatable viral formula, owned content series, and a 30-day launch — around an approved logo, so the brand posts like it means it.',
+    facts: [
+      { l: 'Client', v: 'Top Flavorz Grill' },
+      { l: 'Where', v: 'Carlisle, PA' },
+      { l: 'Year', v: '2026' },
+      { l: 'Status', v: 'Delivered · brand guide' },
+      { l: 'Role', v: 'Brand + content system' },
+      { l: 'Positioning', v: '“Carlisle’s Loudest Plate”' },
+      { l: 'Tagline', v: '“Flavor that hits different.”' },
+      { l: 'Palette', v: 'Near-black + flame orange' },
+    ],
+    problemHeading: 'The brand',
+    beforeAfter: {
+      before:
+        'A grill doing real food in Carlisle with an Instagram that posted whenever there was time, no consistent look, no repeatable format, and no plan to turn attention into orders. The feed did not match the plate.',
+      after:
+        'A named position — “Carlisle’s Loudest Plate” — a tagline, a five-part viral formula, a set of owned series to fill the calendar, and a 30-day launch, all built around the approved logo. A brand that knows what to post and why.',
+    },
+    systemHeading: 'What I delivered',
+    systemBuilt: [
+      { n: '01', title: 'Positioning', desc: '“Carlisle’s Loudest Plate” with the tagline “Flavor that hits different.” — a clear identity the grill can own in its own town instead of blending in.' },
+      { n: '02', title: 'Viral formula', desc: 'A repeatable 5-part formula for reels and carousels — a way to make posts land instead of guessing at what goes viral.' },
+      { n: '03', title: 'Owned series', desc: 'Named recurring formats — Order Like a Regular, Carlisle Decides, Behind the Flame, First Bite, The Flavor Drop, and the Sold-Out Report — so the calendar fills itself.' },
+      { n: '04', title: 'Format systems', desc: 'Reel, carousel, and story systems with structure and covers, so every post is on-brand without starting from a blank page.' },
+      { n: '05', title: '30-day launch', desc: 'A day-by-day launch plan to stand the brand up and build momentum in the first month.' },
+      { n: '06', title: 'Asset-pack upgrade', desc: 'A logo system, reel covers, carousel templates, a story bank, and community/conversion packs to execute the guide.' },
+    ],
+    deliverables: ['Brand positioning', 'Content guide', '5-part viral formula', 'Owned series', '30-day launch', 'Asset pack'],
+    proofNote:
+      '◉ Proof: a real, delivered client deliverable — a complete Viral Instagram Brand & Content Guide built around an approved Top Flavorz logo. This is a strategy and brand document; audience and sales figures are the client’s and are kept off the site until confirmed. No fabricated metrics.',
+    closing: [
+      'Good food is not the hard part — being seen is. The job here was not a logo touch-up, it was a system: a position to own, a formula that repeats, and series that keep the feed loud enough to fill the grill.',
+    ],
   },
   {
     slug: 'tso-apparel',
@@ -522,13 +556,52 @@ export const projects: Project[] = [
     categories: ['brand', 'campaign'],
     featured: false,
     draft: false,
-    hasCase: false,
+    hasCase: true,
     proofStatus: 'LAUNCHED',
     summary:
       'Curated vintage plus one-of-one hand-customized apparel, sold on Depop and Grailed — a distressed, lived-in, Y2K-leaning aesthetic. DJ handles sourcing, photography, listing copy, pricing, and customers. Built to 100+ sales at a 4.65★ rating.',
     proof:
       'A real resale brand with real sales — 100+ sales at 4.65★. Self-run venture; DJ-designed apparel mark.',
     thumb: undefined,
+    kicker: 'Case study · TRIM SH*T ONLY · Resale + custom apparel · Own venture',
+    tagline:
+      'Trim Sh*t Only. A resale and custom-apparel brand run end to end — sourcing, hand-customizing one-of-ones, shooting the product, writing the listings, pricing, and handling customers. A distressed, Y2K-leaning look, sold on Depop and Grailed. Built to 100+ sales at 4.65★.',
+    facts: [
+      { l: 'Venture', v: 'TSO / Trim Sh*t Only' },
+      { l: 'Year', v: '2024–present' },
+      { l: 'Status', v: 'Active' },
+      { l: 'Role', v: 'Founder · designer · photographer' },
+      { l: 'Sells', v: 'Vintage + one-of-one custom' },
+      { l: 'Channels', v: 'Depop · Grailed' },
+      { l: 'Sales', v: '100+' },
+      { l: 'Rating', v: '4.65★' },
+    ],
+    problemHeading: 'The venture',
+    problem: [
+      'Resale is not just buying low and selling high — the margin lives in taste and presentation. Most listings die because the pieces are generic, the photos are bad, and the copy says nothing. Curation and a consistent look are the whole game.',
+      'TSO is a one-person operation with a point of view: curated vintage plus one-of-one hand-customized pieces in a distressed, lived-in, Y2K-leaning aesthetic. DJ runs every step — finding the pieces, customizing the one-of-ones by hand, shooting them, writing the listings, setting price, and dealing with buyers.',
+    ],
+    systemHeading: 'What I run',
+    systemBuilt: [
+      { n: '01', title: 'Sourcing + curation', desc: 'Hunting and selecting pieces with a consistent Y2K/distressed point of view, so the shop reads as a brand and not a pile of thrift.' },
+      { n: '02', title: 'One-of-one custom', desc: 'Hand-customized, one-of-one apparel — the only work in this whole portfolio made by hand rather than on a MacBook.' },
+      { n: '03', title: 'Product photography', desc: 'Shooting every piece so the listing sells the look, not just the size — the single biggest lever in resale conversion.' },
+      { n: '04', title: 'Listing + pricing', desc: 'Writing listing copy and pricing each piece for the platform and the buyer it is aimed at.' },
+      { n: '05', title: 'Brand mark', desc: 'A self-designed TRIM SH*T apparel mark that ties the loose resale inventory into one recognizable name.' },
+      { n: '06', title: 'Customers', desc: 'Handling buyers, questions, and fulfillment across Depop and Grailed — the reason the rating holds at 4.65★.' },
+    ],
+    deliverables: ['Curated inventory', 'One-of-one customs', 'Product photography', 'Listing + pricing', 'Brand mark'],
+    results: [
+      { n: '100', accent: '+', l: 'Sales' },
+      { n: '4.65', accent: '★', l: 'Seller rating' },
+      { n: '1/1', l: 'Custom pieces' },
+      { n: '2', l: 'Marketplaces' },
+    ],
+    proofNote:
+      '◉ Proof: a real, self-run resale brand with real numbers — 100+ sales at a 4.65★ rating across Depop and Grailed. DJ-designed apparel mark. These figures are verified; nothing here is inflated.',
+    closing: [
+      'TSO is proof of the boring part of building a brand: doing every unglamorous step yourself — sourcing, shooting, writing, pricing, shipping — consistently enough that the numbers show up. 100+ sales at 4.65★ is not a launch, it is a track record.',
+    ],
   },
   {
     slug: 'scrollstop',
@@ -540,7 +613,7 @@ export const projects: Project[] = [
     categories: ['campaign', 'product'],
     featured: false,
     draft: false,
-    hasCase: false,
+    hasCase: true,
     proofStatus: 'CONCEPT',
     summary:
       'A TikTok-first “cool finds” store — content so good it stops your scroll. A Shopify storefront (60–72 products with copy and SKUs), 7 collections, discount codes, a welcome email, ad videos, lead games, and a live ops dashboard. Built, pre-scale.',
@@ -549,6 +622,39 @@ export const projects: Project[] = [
     thumb: '/assets/logos/scrollstop-wordmark.png',
     thumbContain: true,
     thumbBg: '#f4f0e6',
+    kicker: 'Case study · TikTok-first commerce brand · Own venture (concept)',
+    tagline:
+      'Content so good it stops your scroll. ScrollStop is a TikTok-first “cool finds” store — impulse gadgets and home goods sold through short-form content — built end to end: a stocked Shopify storefront, seven collections, ad videos, lead games, and a live ops dashboard. Built and ready; not yet scaled.',
+    facts: [
+      { l: 'Venture', v: 'ScrollStop' },
+      { l: 'Handle', v: '@shopscrollstop' },
+      { l: 'Year', v: '2026' },
+      { l: 'Status', v: 'Concept · pre-scale' },
+      { l: 'Role', v: 'Store + content + ops' },
+      { l: 'Storefront', v: '60–72 products · 7 collections' },
+      { l: 'Model', v: 'TikTok-first · dropship' },
+      { l: 'Palette', v: 'Black + red' },
+    ],
+    problemHeading: 'The idea',
+    problem: [
+      'Impulse commerce lives or dies on the video, not the store. The winning products demonstrate a result in a few seconds of short-form; the storefront just has to catch the click and not get in the way. Most attempts fail because the content is an afterthought and the store is half-built.',
+      'ScrollStop is built content-first: a fully stocked store wired to a short-form content engine and an ops dashboard, so the whole funnel — hook, click, checkout, follow-up — exists before a dollar is spent scaling it.',
+    ],
+    systemHeading: 'What I built',
+    systemBuilt: [
+      { n: '01', title: 'Shopify storefront', desc: '60–72 products with real copy and SKUs across 7 collections — a stocked, shoppable store, not a placeholder theme.' },
+      { n: '02', title: 'Named product line', desc: 'A house naming system — DRIFT, PULSE, KNEAD, CRUMB, FROST, NOVA — so impulse gadgets read as a brand instead of random dropship listings.' },
+      { n: '03', title: 'Offers + capture', desc: 'Discount codes, a welcome email, and store policies wired in so a first-time visitor has a reason to buy and a reason to come back.' },
+      { n: '04', title: 'Ad videos', desc: 'Short-form ad videos built to stop the scroll and demo the product in seconds — the actual top of the funnel.' },
+      { n: '05', title: 'Lead games', desc: 'Interactive lead games to capture attention and contacts before the sale, feeding the list instead of buying every visit twice.' },
+      { n: '06', title: 'Ops dashboard', desc: 'A live dashboard with a daily briefing to run the store — the operations layer most one-person stores never build.' },
+    ],
+    deliverables: ['Shopify store', '60–72 products', '7 collections', 'Ad videos', 'Lead games', 'Ops dashboard'],
+    proofNote:
+      '◉ Proof: a fully built Shopify store with a content system and a dropship ops dashboard — a self-built concept, pre-scale. No sales, revenue, or follower claims. What is real is the build, not a result.',
+    closing: [
+      'ScrollStop is a bet on the pattern, not a launched business: build the entire funnel — store, content, capture, ops — so that the only variable left is spend and attention. It is here as a “what I can stand up” concept, labeled honestly as pre-scale.',
+    ],
   },
   {
     slug: 'thrown-after',
@@ -560,7 +666,7 @@ export const projects: Project[] = [
     categories: ['product', 'brand'],
     featured: false,
     draft: false,
-    hasCase: false,
+    hasCase: true,
     proofStatus: 'SHELVED',
     summary:
       'A community discovery platform — “Community. Events. Opportunity.” Events, creators, venues, businesses, nonprofits, and jobs, with claimable listings, a Founders Club, referrals, and the AFTER™ assistant. Launched then shelved 2026-06-29; being rebuilt from scratch with a native iOS app in development.',
@@ -568,6 +674,39 @@ export const projects: Project[] = [
       'Built and launched, then shelved (code intact) and now being rebuilt. Real UI designed end to end. DJ-designed wordmark + “TA” mark.',
     liveUrl: 'https://thrownafter.com',
     thumb: '/assets/shots/thrown-after-live.jpg',
+    kicker: 'Case study · Community discovery platform · Own venture (shelved, rebuilding)',
+    tagline:
+      'Community. Events. Opportunity. Thrown After is a local discovery platform — one place for events, creators, venues, businesses, nonprofits, and jobs. I designed and built it end to end, launched it, then made the call to shelve and rebuild it properly. Code intact; a native iOS app is in development.',
+    facts: [
+      { l: 'Venture', v: 'Thrown After' },
+      { l: 'Year', v: '2026–present' },
+      { l: 'Status', v: 'Shelved 2026-06-29 · rebuilding' },
+      { l: 'Role', v: 'Founder & CEO' },
+      { l: 'What', v: 'Community discovery platform' },
+      { l: 'Live at', v: 'thrownafter.com', href: 'https://thrownafter.com' },
+      { l: 'Next', v: 'Native iOS app in development' },
+      { l: 'Mark', v: 'DJ-designed wordmark + “TA”' },
+    ],
+    problemHeading: 'The idea',
+    problem: [
+      'Local scenes are scattered across a dozen apps — one for events, another for creators, a jobs board, a nonprofit page, a business directory — and none of them talk. If you want to find what is happening around you, you check five places and still miss things.',
+      'Thrown After was the attempt to put all of it in one place: “Community. Events. Opportunity.” Events, creators, venues, businesses, nonprofits, and jobs in a single discovery layer, with claimable listings and an AI assistant to route you to what matters.',
+    ],
+    systemHeading: 'What I built',
+    systemBuilt: [
+      { n: '01', title: 'Discovery platform', desc: 'One feed spanning events, creators, venues, businesses, nonprofits, jobs, and funding — a single place to find what is happening locally.' },
+      { n: '02', title: 'Claimable listings', desc: 'Businesses, venues, and organizations could claim and run their own listing, so the directory could grow itself.' },
+      { n: '03', title: 'AFTER™ assistant', desc: 'A built-in AI assistant to help people find and post the right things instead of getting lost in a raw feed.' },
+      { n: '04', title: 'Founders Club + referrals', desc: 'An early-member Founders Club and a referral/ambassador system to seed the first community and reward the people who grew it.' },
+      { n: '05', title: 'Full app UI', desc: 'End-to-end designed screens — a “post anything” router, onboarding, profiles, a follower system, groups, search, and subscriptions.' },
+      { n: '06', title: 'Brand identity', desc: 'A self-designed “THROWN AFTER” wordmark plus a “TA” secondary mark and monogram — the identity across the whole product.' },
+    ],
+    deliverables: ['Discovery platform', 'Claimable listings', 'AFTER™ assistant', 'Founders Club + referrals', 'Full app UI', 'Wordmark + “TA” mark'],
+    proofNote:
+      '◉ Proof: a real platform, designed and built end to end, launched, then deliberately shelved on 2026-06-29 with the code kept intact. It is being rebuilt from scratch with a native iOS app in development. This is honest status — a shelved flagship, not a running product. No user or traction numbers are claimed.',
+    closing: [
+      'Shelving your own flagship is the honest move most portfolios hide. The scope was real and the build was real, but the right call was to stop, keep the code, and rebuild it properly rather than prop up something that was not ready. The identity and the product thinking carry forward into the rebuild.',
+    ],
   },
   {
     slug: 'carbyn',
@@ -579,12 +718,45 @@ export const projects: Project[] = [
     categories: ['brand', 'experience'],
     featured: false,
     draft: false,
-    hasCase: false,
+    hasCase: true,
     proofStatus: 'CONCEPT',
     summary:
       'DJ’s music and personal artist brand — underground / rage / hyperpop / digicore, on SoundCloud and Spotify. A long-game identity built on the same system as everything else. Mark still in progress.',
     proof:
       'Personal artist/DJ brand line under CE OS. Long-game; no standalone logo pack yet (mark in progress).',
+    kicker: 'Case study · Music / artist brand · Own venture (long-game concept)',
+    tagline:
+      'The artist project. CARBYN is DJ’s own music and artist identity — underground, rage, hyperpop, and digicore — released on SoundCloud and Spotify. A deliberate long-game brand, built on the same operating system as the client work, with the visual identity still in progress.',
+    facts: [
+      { l: 'Venture', v: 'CARBYN' },
+      { l: 'Year', v: '2026–present' },
+      { l: 'Status', v: 'Long-game · backlog' },
+      { l: 'Role', v: 'Artist · creative direction' },
+      { l: 'Scene', v: 'Underground · rage · hyperpop · digicore' },
+      { l: 'On', v: 'SoundCloud · Spotify' },
+      { l: 'Under', v: 'CE OS' },
+      { l: 'Mark', v: 'In progress' },
+    ],
+    problemHeading: 'The idea',
+    problem: [
+      'An artist project is a brand like any other — it needs a name, a sound, a look, and a way to reach the right rooms. Most independent artists treat the music as the whole job and leave the identity and the outreach to chance, which is why good tracks go unheard.',
+      'CARBYN is DJ’s own artist identity in the underground / rage / hyperpop / digicore lane, treated with the same operator mindset as the client work: a real name and position, a distribution footprint, and targeted outreach — built patiently as a long game rather than forced.',
+    ],
+    systemHeading: 'The pieces',
+    systemBuilt: [
+      { n: '01', title: 'Artist identity', desc: 'CARBYN as a named artist project with a defined lane — underground, rage, hyperpop, digicore — rather than an unbranded stream of uploads.' },
+      { n: '02', title: 'Music + releases', desc: 'Original music released and distributed on SoundCloud and Spotify, the core of the whole project.' },
+      { n: '03', title: 'Outreach lists', desc: 'Targeted music-outreach lead lists — hyperpop playlists, outlets like Ringtone Mag, and Philly DIY venues — so releases reach real rooms and ears.' },
+      { n: '04', title: 'Long-game plan', desc: 'A deliberately paced backlog project, built up over time instead of chasing one viral moment.' },
+      { n: '05', title: 'Same operating system', desc: 'Run on the same brand-and-ops thinking as every other venture here — the artist project treated as a business, not a hobby.' },
+      { n: '06', title: 'Visual identity', desc: 'The CARBYN mark and full visual system are still in progress — deliberately left undesigned rather than faked.' },
+    ],
+    deliverables: ['Artist identity', 'Music releases', 'SoundCloud + Spotify', 'Outreach lists'],
+    proofNote:
+      '◉ Proof: a genuine personal artist brand and music catalog on SoundCloud and Spotify, with real outreach lists built — a long-game concept under CE OS. There is no standalone logo pack yet and the mark is in progress; that is stated plainly rather than mocked up. No streaming or fan numbers are claimed.',
+    closing: [
+      'CARBYN is here for honesty and range, not metrics: proof that the same operator approach — name it, position it, distribute it, do the outreach — gets applied to DJ’s own music. It is early, the mark is unfinished, and it is labeled exactly that way.',
+    ],
   },
 ];
 

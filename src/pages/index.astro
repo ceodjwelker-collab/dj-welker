@@ -1,0 +1,198 @@
+---
+import Base from '../layouts/Base.astro';
+import { featured, categories } from '../data/projects';
+
+const catLabel = Object.fromEntries(categories.map((c) => [c.f, c.label]));
+const feat = featured;
+---
+<Base
+  title="DJ Welker — Creative Systems Designer & Business Modernizer"
+  description="DJ Welker builds brands, products, campaigns, and systems that make businesses harder to ignore and easier to run. York, PA + remote."
+  type="profile"
+  current="home"
+>
+<main id="main">
+
+<!-- HERO -->
+<header class="pad" style="position:relative;overflow:hidden"><canvas id="heroCanvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none"></canvas><div class="wrap" style="position:relative;z-index:1">
+  <span class="eyebrow">DJ Welker · York, PA + remote</span>
+  <h1 style="font-size:clamp(2.4rem,6vw,5rem);letter-spacing:-.035em;margin:22px 0 24px;max-width:16ch">I build brands, products, campaigns, and <span class="accent">systems</span> that make businesses harder to ignore and easier to run.</h1>
+  <p class="lead">Founder and builder. I make brands, websites, and tools, and I run real operations. I turn an unclear business, brand, or idea into something organized, attractive, and built to move — the identity, the experience, the content, and the tools behind it. I move fast and I ship.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+    <a class="btn btn--accent" href="#work">View selected work <span class="ar">↓</span></a>
+    <a class="btn" href="/resume">View résumé</a>
+  </div>
+  <p style="margin-top:16px;font-family:var(--mono);font-size:.8rem;color:var(--muted)">Operator + builder + founder · Open to design, brand, and build roles — full-time, contract, or fractional · York, PA + remote</p>
+  <p class="proof-only" style="margin-top:22px;font-family:var(--mono);font-size:.8rem;color:var(--accent)">◉ Proof Mode is on — role, constraints, and concept-vs-launched status are now shown on each project.</p>
+</div></header>
+
+<!-- CAPABILITY STRIP -->
+<section style="background:var(--ink);color:var(--paper);border:none"><div class="wrap" style="padding:20px 28px;display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--paper)">
+  <span>Brand Systems</span><span style="color:var(--accent)">/</span><span>Digital Products</span><span style="color:var(--accent)">/</span><span>Campaigns</span><span style="color:var(--accent)">/</span><span>Experiences</span><span style="color:var(--accent)">/</span><span>Operations</span>
+</div></section>
+
+<!-- SELECTED WORK -->
+<section class="pad" id="work"><div class="wrap">
+  <div class="sec-head"><h2>Selected work</h2><span class="eyebrow">01 — 0{feat.length} · more in the archive</span></div>
+  <div class="worklist">
+    {feat.map((p, i) => (
+      <article class="witem reveal">
+        <div class="wmeta">
+          <div class="num">0{i + 1} · {p.proofStatus === 'LAUNCHED' ? (p.client.includes('own') || p.slug === 'ce-os' ? 'Flagship' : 'Client / live') : 'Product'}</div>
+          <h3>{p.title} {p.titleSuffix && <span style="font-family:var(--mono);font-size:.9rem;color:var(--muted)">{p.titleSuffix}</span>}</h3>
+          <div class="sum">{p.summary}</div>
+          <div class="tags">
+            {p.categories.map((c) => <span class="tag">{catLabel[c]}</span>)}
+            <span class="tag status">{p.status}</span>
+          </div>
+          <div class="proofpanel proof-only"><div class="pl">Proof · DJ's role</div><p>{p.proof}</p></div>
+          <a class="wlink" href={`/work/${p.slug}`}>Read case study <span class="ar">↗</span></a>
+          {p.liveUrl && <a class="wlink" href={p.liveUrl} target="_blank" rel="noopener">Visit live <span class="ar">↗</span></a>}
+        </div>
+        {p.thumb ? (
+          <div class={`wshot${p.thumbContain ? ' emblem' : ''}`} style={p.thumbBg ? `background:${p.thumbBg}` : undefined}>
+            <img src={p.thumb} alt={`${p.title} — ${p.role}`} loading="lazy" decoding="async" />
+          </div>
+        ) : (
+          <div class="wshot"><div class="ph">{p.title}<br>{p.role} · {p.status}</div></div>
+        )}
+      </article>
+    ))}
+  </div>
+  <div style="margin-top:34px"><a class="btn" href="/work">See the full archive <span class="ar">→</span></a></div>
+</div></section>
+
+<!-- LOGO DESIGN TEASER -->
+<section class="pad"><div class="wrap">
+  <div class="sec-head"><h2>Logo &amp; brand marks</h2><span class="eyebrow">Identity design</span></div>
+  <div class="caps" style="grid-template-columns:1.4fr 1fr;align-items:center">
+    <div>
+      <p style="font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.35;max-width:36ch">Marks for real ventures and real clients — the AUXTION “Signal A”, Shiftly’s Punch Track, LIFTWAVE, ScrollStop, Thrown After, TSO, CE OS, and a client-approved Top Flavorz logo.</p>
+      <div style="margin-top:22px"><a class="btn btn--accent" href="/logos">See the logo showcase <span class="ar">→</span></a></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="wshot emblem" style="aspect-ratio:1;background:#080A0F"><img src="/assets/logos/auxtion-mark.svg" alt="AUXTION Signal A mark" loading="lazy" /></div>
+      <div class="wshot emblem" style="aspect-ratio:1;background:#050506"><img src="/assets/logos/ce-os-logo.svg" alt="CE OS mark" loading="lazy" /></div>
+      <div class="wshot emblem" style="aspect-ratio:1;background:#090A0C"><img src="/assets/logos/liftwave-logo.svg" alt="LIFTWAVE logo" loading="lazy" /></div>
+      <div class="wshot emblem" style="aspect-ratio:1;background:#050505"><img src="/assets/logos/top-flavorz-logo.png" alt="Top Flavorz logo" loading="lazy" /></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CAPABILITIES BY OUTCOME -->
+<section class="pad"><div class="wrap">
+  <div class="sec-head"><h2>What I actually do</h2><span class="eyebrow">Organized by outcome</span></div>
+  <div class="caps">
+    <div class="cap reveal"><div class="n">01 · Build</div><h3>Make it look established</h3><ul><li>Brand identity &amp; systems</li><li>Logo &amp; identity design</li><li>Websites, apps &amp; portals</li><li>Campaign &amp; social creative</li></ul></div>
+    <div class="cap reveal"><div class="n">02 · Connect &amp; Automate</div><h3>Make the experience work</h3><ul><li>Booking &amp; conversion flows</li><li>CRM, forms, calendars, payments</li><li>Follow-up &amp; review automation</li><li>Digital products &amp; tools</li></ul></div>
+    <div class="cap reveal"><div class="n">03 · Run</div><h3>Make it easier to run</h3><ul><li>Dashboards &amp; analytics</li><li>SOPs &amp; internal systems</li><li>AI-assisted workflows</li><li>Whole-business operating systems</li></ul></div>
+  </div>
+  <div style="margin-top:26px"><a class="btn" href="/services">See services &amp; skills <span class="ar">→</span></a></div>
+</div></section>
+
+<!-- ABOUT SNIPPET -->
+<section class="pad"><div class="wrap homeabout">
+  <img src="/assets/shots/dj-2.jpg" alt="DJ Welker, York PA" class="pimg" loading="lazy" decoding="async" width="825" height="1100" />
+  <div>
+    <span class="eyebrow">About</span>
+    <p style="font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;margin-top:18px">DJ Welker is a self-taught creative director, designer, and maker in York, PA — an operator, a builder, and a founder. He works across brand, product, content, and operations: the visible identity and the invisible system behind it, with direct access to the person doing the work.</p>
+    <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="/about">More about DJ <span class="ar">→</span></a><a class="btn btn--accent" href="/contact">Get in touch <span class="ar">→</span></a></div>
+  </div>
+</div></section>
+
+<!-- PORTRAIT STRIP -->
+<section style="background:var(--ink);border:none"><div class="wrap" style="padding:0"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+  <img src="/assets/shots/dj-3.jpg" alt="DJ Welker — York, PA" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 28%;display:block" width="750" height="1000" />
+  <img src="/assets/shots/dj-1.jpg" alt="DJ Welker" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 22%;display:block" width="750" height="1000" />
+  <img src="/assets/shots/dj-2.jpg" alt="DJ Welker" loading="lazy" decoding="async" style="width:100%;height:clamp(240px,32vw,440px);object-fit:cover;object-position:center 22%;display:block" width="750" height="1000" />
+</div></div></section>
+
+</main>
+<footer><div class="wrap">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;align-items:flex-start">
+    <div style="max-width:420px">
+      <div style="font-family:var(--display);font-weight:700;font-size:1.8rem;letter-spacing:-.02em;margin-bottom:12px">Open to the right opportunity.</div>
+      <a class="btn btn--accent" href="mailto:ceodjwelker@gmail.com">Email DJ <span class="ar">↗</span></a>
+    </div>
+    <div style="font-family:var(--mono);font-size:.8rem;line-height:2;opacity:.85">
+      <div><a href="mailto:ceodjwelker@gmail.com">ceodjwelker@gmail.com</a></div>
+      <div>York, PA · Remote</div>
+      <div><a href="/resume">Résumé</a> · <a href="/work">Work</a> · <a href="/logos">Logos</a> · <a href="/contact">Contact</a></div>
+      <div><a href="https://instagram.com/dj.welker" target="_blank" rel="noopener">Instagram @dj.welker</a> · <a href="tel:+17178814960">(717) 881-4960</a></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(244,241,234,.2);margin-top:34px;padding-top:18px;font-family:var(--mono);font-size:.72rem;opacity:.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <span>© 2026 DJ Welker</span><span>Creative systems designer &amp; business modernizer</span>
+  </div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" is:inline></script>
+<script is:inline>
+(function(){
+  var cv=document.getElementById('heroCanvas'); if(!cv||!window.THREE) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); }catch(e){ return; }
+  renderer.setClearColor(0x000000,0);
+  var PR=Math.min(window.devicePixelRatio||1,2); renderer.setPixelRatio(PR);
+  var PINE=new THREE.Color(0x1E4635), CREAM=new THREE.Color(0xF4F0E6);
+  var scene=new THREE.Scene(); scene.fog=new THREE.Fog(0xF4F0E6, 9, 30);
+  var camera=new THREE.PerspectiveCamera(60,1,0.1,120); camera.position.z=14;
+  var GROUP=new THREE.Group(); scene.add(GROUP);
+  var sc=document.createElement('canvas'); sc.width=sc.height=64;
+  var sx=sc.getContext('2d'), g=sx.createRadialGradient(32,32,0,32,32,32);
+  g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(0.4,'rgba(255,255,255,0.72)'); g.addColorStop(1,'rgba(255,255,255,0)');
+  sx.fillStyle=g; sx.beginPath(); sx.arc(32,32,32,0,7); sx.fill();
+  var sprite=new THREE.CanvasTexture(sc);
+  var N=reduce?60:100, R=9.5, pts=[];
+  var geo=new THREE.BufferGeometry(), pos=new Float32Array(N*3), sizes=new Float32Array(N);
+  for(var i=0;i<N;i++){
+    var v=new THREE.Vector3((Math.random()*2-1)*R,(Math.random()*2-1)*R*0.6,(Math.random()*2-1)*R*0.65);
+    v.vel=new THREE.Vector3((Math.random()-0.5)*0.0055,(Math.random()-0.5)*0.0055,(Math.random()-0.5)*0.0055);
+    pts.push(v); pos[i*3]=v.x;pos[i*3+1]=v.y;pos[i*3+2]=v.z;
+    sizes[i]=(Math.random()<0.15)?(3.6+Math.random()*2.4):(1.0+Math.random()*1.4);
+  }
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('aSize',new THREE.BufferAttribute(sizes,1));
+  var uniforms={uTex:{value:sprite},uColor:{value:PINE},uFogCol:{value:CREAM},uNear:{value:9.0},uFar:{value:30.0},uPR:{value:PR}};
+  var mat=new THREE.ShaderMaterial({uniforms:uniforms,transparent:true,depthWrite:false,
+    vertexShader:'attribute float aSize;uniform float uPR;uniform float uNear;uniform float uFar;varying float vF;void main(){vec4 mv=modelViewMatrix*vec4(position,1.0);float d=-mv.z;vF=clamp((d-uNear)/(uFar-uNear),0.0,1.0);gl_PointSize=aSize*uPR*(82.0/d);gl_Position=projectionMatrix*mv;}',
+    fragmentShader:'uniform sampler2D uTex;uniform vec3 uColor;uniform vec3 uFogCol;varying float vF;void main(){float a=texture2D(uTex,gl_PointCoord).a;vec3 c=mix(uColor,uFogCol,vF*0.9);gl_FragColor=vec4(c,a*(1.0-vF*0.82));}'});
+  GROUP.add(new THREE.Points(geo,mat));
+  var lgeo=new THREE.BufferGeometry();
+  GROUP.add(new THREE.LineSegments(lgeo,new THREE.LineBasicMaterial({color:0x1E4635,transparent:true,opacity:0.2,fog:true})));
+  var mx=0,my=0,tmx=0,tmy=0;
+  window.addEventListener('pointermove',function(e){ tmx=(e.clientX/window.innerWidth-0.5); tmy=(e.clientY/window.innerHeight-0.5); },{passive:true});
+  function resize(){var p=cv.parentNode,w=p.clientWidth,h=p.clientHeight||520; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();}
+  window.addEventListener('resize',resize); resize();
+  var MAXD=3.6, run=true;
+  document.addEventListener('visibilitychange',function(){ run=!document.hidden; if(run&&!reduce) requestAnimationFrame(tick); });
+  function build(){
+    var seg=[],pa=geo.attributes.position.array;
+    for(var i=0;i<N;i++) for(var j=i+1;j<N;j++){
+      var dx=pa[i*3]-pa[j*3],dy=pa[i*3+1]-pa[j*3+1],dz=pa[i*3+2]-pa[j*3+2];
+      if(dx*dx+dy*dy+dz*dz<MAXD*MAXD) seg.push(pa[i*3],pa[i*3+1],pa[i*3+2],pa[j*3],pa[j*3+1],pa[j*3+2]);
+    }
+    lgeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(seg),3));
+  }
+  function tick(){
+    if(!run) return;
+    var pa=geo.attributes.position.array;
+    for(var i=0;i<N;i++){ var v=pts[i];
+      v.x+=v.vel.x; v.y+=v.vel.y; v.z+=v.vel.z;
+      if(v.x>R||v.x<-R)v.vel.x*=-1; if(v.y>R*0.6||v.y<-R*0.6)v.vel.y*=-1; if(v.z>R*0.65||v.z<-R*0.65)v.vel.z*=-1;
+      pa[i*3]=v.x;pa[i*3+1]=v.y;pa[i*3+2]=v.z;
+    }
+    geo.attributes.position.needsUpdate=true; build();
+    var t=Date.now();
+    GROUP.rotation.y+=0.0011; GROUP.rotation.x=Math.sin(t*0.00006)*0.085;
+    var s=1+Math.sin(t*0.0006)*0.022; GROUP.scale.set(s,s,s);
+    mx+=(tmx-mx)*0.045; my+=(tmy-my)*0.045;
+    camera.position.x=mx*3.4; camera.position.y=-my*2.4; camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+    if(!reduce) requestAnimationFrame(tick);
+  }
+  build(); tick();
+})();
+</script>
+</Base>

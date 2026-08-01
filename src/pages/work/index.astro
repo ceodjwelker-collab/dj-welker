@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { published, categories, proofLabel } from '../../data/projects';
+
+// order: launched/flagship first, then the rest as authored
+const items = published;
+---
+<Base
+  title="Work — DJ Welker"
+  description="Software, SaaS, sites, brands, and systems designed and shipped by DJ Welker. Toggle Proof Mode for honest role and status on every project."
+  current="work"
+>
+<main id="main">
+
+<header class="case-head"><div class="wrap">
+  <div class="k">Portfolio · York, PA · One builder, start to finish</div>
+  <h1>I don't pitch it.<br>I ship it.</h1>
+  <p class="tag">A working archive — brand, software, SaaS, and systems, each designed and built end to end. Toggle <b>Proof Mode</b> to see my exact role and honest status on every project. One paying client is verified; the rest are labeled concept or self-built, never as fake clients.</p>
+</div></header>
+
+<section class="pad"><div class="wrap">
+  <div class="filters" id="filters">
+    <button class="filt on" data-f="all">All</button>
+    {categories.map((c) => <button class="filt" data-f={c.f}>{c.label}</button>)}
+  </div>
+
+  <div class="wgrid" id="wgrid">
+    {items.map((p) => {
+      const Tag = p.hasCase ? 'a' : 'div';
+      const href = p.hasCase ? `/work/${p.slug}` : undefined;
+      return (
+        <Tag class="wcard" href={href} data-cats={p.categories.join(' ')}>
+          {p.thumb && (
+            <div class={`wthumb${p.thumbContain ? ' contain' : ''}`} style={p.thumbBg ? `background:${p.thumbBg}` : undefined}>
+              <img src={p.thumb} alt={`${p.title} — ${p.role}`} loading="lazy" decoding="async" />
+            </div>
+          )}
+          <div class="top">
+            <span class="kind">{p.role}</span>
+            <span class="st">{proofLabel[p.proofStatus]}</span>
+          </div>
+          <h3>{p.title} {p.titleSuffix && <span style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">{p.titleSuffix}</span>}</h3>
+          <p>{p.summary}</p>
+          <div class="proofpanel proof-only"><div class="pl">Role · status</div><p>{p.proof}</p></div>
+          <span class="go">{p.hasCase ? 'Case study ↗' : 'Overview →'}</span>
+        </Tag>
+      );
+    })}
+  </div>
+  <p style="margin-top:24px;font-family:var(--mono);font-size:.72rem;color:var(--muted)">Overview-only cards get full case pages as real screens come in. Status labels are honest — launched, building/concept, or shelved.</p>
+</div></section>
+
+</main>
+<footer><div class="wrap">
+  <div style="font-family:var(--display);font-weight:700;font-size:1.8rem;letter-spacing:-.02em;margin-bottom:12px">This is what I've built. I'm open to building next with your team.</div>
+  <a class="btn btn--accent" href="/contact">Get in touch <span class="ar">↗</span></a>
+  <div style="border-top:1px solid rgba(244,241,234,.2);margin-top:34px;padding-top:18px;font-family:var(--mono);font-size:.72rem;opacity:.6">© 2026 DJ Welker · ceodjwelker@gmail.com · York, PA + remote</div>
+</div></footer>
+
+<script is:inline>
+(function(){
+  var fs=document.querySelectorAll('.filt'), cards=document.querySelectorAll('#wgrid .wcard');
+  fs.forEach(function(f){f.addEventListener('click',function(){
+    fs.forEach(function(x){x.classList.remove('on');}); f.classList.add('on');
+    var v=f.getAttribute('data-f');
+    cards.forEach(function(c){var cats=c.getAttribute('data-cats')||'';c.classList.toggle('hide',!(v==='all'||cats.indexOf(v)>-1));});
+  });});
+})();
+</script>
+</Base>

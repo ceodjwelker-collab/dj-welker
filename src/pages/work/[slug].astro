@@ -1,0 +1,135 @@
+---
+import Base from '../../layouts/Base.astro';
+import { caseProjects, bySlug } from '../../data/projects';
+
+export function getStaticPaths() {
+  return caseProjects.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const p = bySlug(slug!)!;
+
+const creativeWork = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: p.title,
+  creator: { '@type': 'Person', name: 'DJ Welker' },
+  inLanguage: 'en-US',
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://djwelker.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: 'https://djwelker.com/work' },
+    { '@type': 'ListItem', position: 3, name: p.title },
+  ],
+};
+const desc = p.summary.length > 300 ? p.summary.slice(0, 297) + '…' : p.summary;
+---
+<Base
+  title={`${p.title} — DJ Welker`}
+  description={desc}
+  type="article"
+  current="work"
+  jsonLd={[creativeWork, breadcrumb]}
+>
+<main id="main">
+
+<header class="case-head"><div class="wrap">
+  <div class="k">{p.kicker}</div>
+  <h1>{p.title}</h1>
+  <p class="tag">{p.tagline}</p>
+  {p.facts && (
+    <div class="factpanel">
+      {p.facts.map((f) => (
+        <div class="fact">
+          <div class="l">{f.l}</div>
+          <div class="v">{f.href ? <a href={f.href} target="_blank" rel="noopener" style="color:var(--accent)">{f.v}</a> : f.v}</div>
+        </div>
+      ))}
+    </div>
+  )}
+  {p.thumb && !p.beforeAfter && (
+    <div class="casehero" style={p.thumbBg ? `background:${p.thumbBg};padding:56px 24px;text-align:center` : undefined}>
+      <img src={p.thumb} alt={`${p.title} — ${p.role}`} style={p.thumbContain ? 'max-width:420px;width:80%;margin:0 auto' : undefined} loading="lazy" decoding="async" />
+    </div>
+  )}
+</div></header>
+
+{p.beforeAfter && (
+  <section class="csec"><div class="wrap">
+    <h2>{p.problemHeading ?? 'The turnaround'}</h2>
+    <div class="ba">
+      <div class="b"><div class="l">Before</div>{p.beforeAfter.before}</div>
+      <div class="arw">→</div>
+      <div class="b after"><div class="l">After</div>{p.beforeAfter.after}</div>
+    </div>
+  </div></section>
+)}
+
+{p.problem && (
+  <section class="csec"><div class="wrap">
+    <h2>{p.problemHeading ?? 'The problem'}</h2>
+    {p.problem.map((para) => <p>{para}</p>)}
+  </div></section>
+)}
+
+{p.systemBuilt && (
+  <section class="csec"><div class="wrap">
+    <h2>{p.systemHeading ?? 'What I built'}</h2>
+    <div class="feat">
+      {p.systemBuilt.map((f) => (
+        <div class="f"><div class="n">{f.n}</div><h4>{f.title}</h4><p>{f.desc}</p></div>
+      ))}
+    </div>
+    {p.figures && (
+      <div class="cgrid2">
+        {p.figures.map((fig) => (
+          <figure class="cfig" style={fig.dark ? 'background:#0b0d10' : undefined}>
+            <img src={fig.src} alt={fig.alt} loading="lazy" decoding="async" style={fig.dark ? 'object-fit:contain;padding:26px' : undefined} />
+            <figcaption>{fig.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+  </div></section>
+)}
+
+{p.results && (
+  <section class="csec"><div class="wrap">
+    <h2>The result</h2>
+    <div class="stats">
+      {p.results.map((s) => (
+        <div class="s"><div class="n">{s.n}{s.accent && <span class="accent">{s.accent}</span>}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+    {p.proofNote && <p class="proof-only" style="margin-top:20px;font-family:var(--mono);font-size:.85rem;color:var(--accent)">{p.proofNote}</p>}
+  </div></section>
+)}
+
+{p.deliverables && (
+  <section class="csec"><div class="wrap">
+    <h2>Deliverables &amp; build</h2>
+    <div class="chips">{p.deliverables.map((c) => <span class="c">{c}</span>)}</div>
+    {!p.results && p.proofNote && <p class="proof-only" style="margin-top:16px;font-family:var(--mono);font-size:.85rem;color:var(--accent)">{p.proofNote}</p>}
+  </div></section>
+)}
+
+{p.closing && (
+  <section class="csec"><div class="wrap">
+    <h2>Why it matters</h2>
+    {p.closing.map((para) => <p>{para}</p>)}
+    <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+      {p.liveUrl && <a class="btn btn--accent" href={p.liveUrl} target="_blank" rel="noopener">Visit the live site <span class="ar">↗</span></a>}
+      {p.instagram && <a class="btn btn--accent" href={p.instagram} target="_blank" rel="noopener">Visit on Instagram <span class="ar">↗</span></a>}
+      <a class="btn" href="/contact">Get in touch <span class="ar">↗</span></a>
+      <a class="btn" href="/work">More work</a>
+    </div>
+  </div></section>
+)}
+
+</main>
+<footer><div class="wrap"><div style="font-family:var(--mono);font-size:.72rem;opacity:.7">© 2026 DJ Welker · ceodjwelker@gmail.com · York, PA + remote · <a href="/work">← All work</a></div></div></footer>
+
+</Base>

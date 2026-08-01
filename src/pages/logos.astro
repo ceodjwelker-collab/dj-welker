@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+
+interface Mark {
+  name: string;
+  file?: string;
+  bg: string;
+  note: string;
+  label: string;
+  labelKind: 'self' | 'client' | 'progress';
+}
+
+const marks: Mark[] = [
+  { name: 'AUXTION', file: '/assets/logos/auxtion-mark.svg', bg: '#080A0F', note: 'The “Signal A” — a custom A built from an upward signal path with a bright queue node.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'Shiftly', file: '/assets/logos/shiftly-mark.png', bg: '#0E0F11', note: 'The “Punch Track” S — a clock-in mark for the hourly-business operations OS.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'LIFTWAVE', file: '/assets/logos/liftwave-logo.svg', bg: '#090A0C', note: 'A focus/cue-control mark and wordmark for the live DJ show system.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'ScrollStop', file: '/assets/logos/scrollstop-wordmark.png', bg: '#F4F0E6', note: 'A heavy condensed wordmark for the TikTok-first “cool finds” store.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'Thrown After', file: '/assets/logos/thrown-after-mark.png', bg: '#0b0b0d', note: 'The “TA” monogram for the community discovery platform.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'TSO', bg: '#0b0b0d', note: 'The apparel wordmark for a one-of-one custom + curated-resale brand.', label: 'Self-designed · own venture', labelKind: 'self' },
+  { name: 'CE OS', file: '/assets/logos/ce-os-logo.svg', bg: '#050506', note: 'The studio’s chrome mark — a working identity; a refined mark is in progress.', label: 'Self-designed · own studio', labelKind: 'self' },
+  { name: 'Top Flavorz Grill', file: '/assets/logos/top-flavorz-logo.png', bg: '#050505', note: 'Client-approved logo delivered with the full brand & content guide. Not redrawn here.', label: 'Client · approved', labelKind: 'client' },
+  // placeholders — no mark yet, never faked
+  { name: 'STAKE', bg: '#0a1310', note: 'Real-estate acquisition OS. Identity still in progress — the product ships UI-first.', label: 'Mark in progress', labelKind: 'progress' },
+  { name: 'Titanium Detailing', bg: '#0b0b0d', note: 'Client “T” emblem lives in the live build (matte black / titanium silver). No standalone file to show.', label: 'Client · in the live build', labelKind: 'progress' },
+  { name: 'PLUG', bg: '#101014', note: 'TikTok Shop content engine. A UI-only concept — no standalone mark yet.', label: 'Mark in progress', labelKind: 'progress' },
+  { name: 'CARBYN', bg: '#0d0b12', note: 'Music / artist alias. Long-game brand — mark not yet designed.', label: 'Mark in progress', labelKind: 'progress' },
+];
+---
+<Base
+  title="Logo Design — DJ Welker"
+  description="DJ Welker's logo and brand marks — AUXTION, Shiftly, LIFTWAVE, ScrollStop, Thrown After, TSO, CE OS, and a client-approved Top Flavorz mark. Labeled honestly."
+  current="logos"
+>
+<style slot="head">
+.loggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+@media(max-width:860px){.loggrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.loggrid{grid-template-columns:1fr}}
+.logtile{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+.logtile .mark{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:34px;overflow:hidden}
+.logtile .mark img{max-width:100%;max-height:100%;object-fit:contain}
+.logtile .ph{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:.02em;color:rgba(255,255,255,.42);text-align:center}
+.logtile .meta{padding:16px 18px;border-top:1px solid var(--line)}
+.logtile .meta h3{font-size:1.15rem;margin-bottom:6px}
+.logtile .meta p{font-size:.9rem;color:var(--ink2)}
+.logtile .lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;display:inline-block;padding:4px 10px;border-radius:100px;border:1px solid var(--line)}
+.logtile .lbl.self{color:var(--accent);border-color:rgba(30,70,53,.4)}
+.logtile .lbl.client{color:#9a6b1a;border-color:rgba(154,107,26,.4)}
+.logtile .lbl.progress{color:var(--muted)}
+</style>
+<main id="main">
+
+<header class="case-head"><div class="wrap">
+  <div class="k">Logo &amp; identity design</div>
+  <h1>Marks I've made.</h1>
+  <p class="tag">Logos and brand marks for real ventures and real clients — designed digitally, end to end. Each is labeled honestly: self-designed for my own ventures, client for delivered client work, and “mark in progress” where no real logo exists yet. Nothing here is faked.</p>
+</div></header>
+
+<section class="csec"><div class="wrap">
+  <div class="loggrid">
+    {marks.map((m) => (
+      <div class="logtile">
+        <div class="mark" style={`background:${m.bg}`}>
+          {m.file ? <img src={m.file} alt={`${m.name} logo`} loading="lazy" decoding="async" /> : <div class="ph">{m.name}{m.labelKind === 'progress' && <><br /><span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em">MARK IN PROGRESS</span></>}</div>}
+        </div>
+        <div class="meta">
+          <h3>{m.name}</h3>
+          <p>{m.note}</p>
+          <span class={`lbl ${m.labelKind}`}>{m.label}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+  <p style="margin-top:24px;font-family:var(--mono);font-size:.72rem;color:var(--muted)">Client marks (Top Flavorz, Titanium) prove client work and were partly supplied — labeled honestly. CE OS's current chrome mark is a working identity pending a refined design.</p>
+  <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--accent" href="/work">See the work <span class="ar">↗</span></a><a class="btn" href="/contact">Start a project <span class="ar">↗</span></a></div>
+</div></section>
+
+</main>
+<footer><div class="wrap"><div style="font-family:var(--mono);font-size:.8rem;opacity:.85">© 2026 DJ Welker · ceodjwelker@gmail.com · @dj.welker · York, PA + remote</div></div></footer>
+
+</Base>

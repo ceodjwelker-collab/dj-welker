@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="About — DJ Welker"
+  description="DJ Welker is a self-taught creative director, designer, and maker in York, PA — an operator, builder, and founder who works across brand, product, content, and operations."
+  current="about"
+>
+<style slot="head">
+.abgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:820px){.abgrid{grid-template-columns:1fr}}
+.photostack{display:flex;flex-direction:column;gap:12px}
+.photostack .pmain{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+.prow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prow img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
+</style>
+<main id="main">
+
+<header class="case-head"><div class="wrap">
+  <div class="k">About · York, PA + remote</div>
+  <h1>Operator, builder,<br>and founder.</h1>
+  <p class="tag">Most people are one of the three. DJ Welker is all three — a self-taught creative director and maker who builds brands, tools, and systems, and runs real operations. Fast turnarounds, clean work, done right.</p>
+</div></header>
+
+<section class="csec"><div class="wrap abgrid">
+  <div>
+    <h2 style="font-size:1.6rem;margin-bottom:14px">The short version</h2>
+    <p>I'm DJ Welker, based in York, PA. I make brands, websites, and tools, and I run real operations. I take an unclear business, brand, or idea and turn it into something organized, attractive, and built to move — not just a logo, but the identity, the site, the content, the tools, and the operation behind it, designed to work together.</p>
+    <p>I've never been able to sit still creatively. Instead of paying for college courses, I taught myself by doing — every brand, graphic, platform, and product in this portfolio was built through real work, trial, and reps. I run my own studio, CE OS, and my own ventures, and I take most projects from the first idea all the way to the finished product.</p>
+    <h2 style="font-size:1.6rem;margin:28px 0 14px">How I work</h2>
+    <p>Diagnose what's actually disconnected. Design the system it needs. Build it. Connect it. Then keep improving it with real reporting. I'd rather show working proof than talk in abstractions — the work does the arguing. I came up in management and customer service, so I know operations from the ground up.</p>
+    <p style="font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-top:6px">Open to design, brand, and build roles — full-time, contract, or fractional.</p>
+    <div class="chips" style="margin-top:16px">
+      <span class="c">Brand &amp; identity design</span><span class="c">Web &amp; software</span><span class="c">Digital products</span><span class="c">Automation &amp; AI</span><span class="c">Content &amp; campaigns</span><span class="c">E-commerce &amp; resale</span><span class="c">Operations</span><span class="c">DJing / music (CARBYN)</span>
+    </div>
+  </div>
+  <div>
+    <div class="photostack">
+      <img src="/assets/shots/dj-1.jpg" alt="DJ Welker, York PA" class="pmain" loading="lazy" decoding="async" width="825" height="1100" />
+      <div class="prow">
+        <img src="/assets/shots/dj-2.jpg" alt="DJ Welker" loading="lazy" decoding="async" width="825" height="1100" />
+        <img src="/assets/shots/dj-3.jpg" alt="DJ Welker" loading="lazy" decoding="async" width="825" height="1100" />
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:10px">DJ Welker · York, PA · founder of CE OS &amp; Thrown After</p>
+  </div>
+</div></section>
+
+<section class="csec"><div class="wrap" style="text-align:center;max-width:620px;margin-inline:auto">
+  <h2>Open to the right role.</h2>
+  <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn--accent" href="/contact">Get in touch <span class="ar">↗</span></a><a class="btn" href="/resume">See résumé</a></div>
+</div></section>
+
+</main>
+<footer><div class="wrap">
+  <div style="font-family:var(--mono);font-size:.8rem;line-height:2;opacity:.85">
+    <a href="mailto:ceodjwelker@gmail.com">ceodjwelker@gmail.com</a> · <a href="tel:+17178814960">(717) 881-4960</a> · <a href="https://instagram.com/dj.welker" target="_blank" rel="noopener">@dj.welker</a> · York, PA + remote
+  </div>
+</div></footer>
+
+</Base>

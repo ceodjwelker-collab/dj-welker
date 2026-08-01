@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://djwelker.com/sitemap-index.xml

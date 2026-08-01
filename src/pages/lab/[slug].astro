@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('lab', ({ data }) => data.draft !== true);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const desc = post.data.summary.length > 300 ? post.data.summary.slice(0, 297) + '…' : post.data.summary;
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.summary,
+  datePublished: post.data.date.toISOString(),
+  author: { '@type': 'Person', name: 'DJ Welker' },
+  inLanguage: 'en-US',
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://djwelker.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Lab', item: 'https://djwelker.com/lab' },
+    { '@type': 'ListItem', position: 3, name: post.data.title },
+  ],
+};
+---
+<Base
+  title={`${post.data.title} — DJ Welker`}
+  description={desc}
+  type="article"
+  current="lab"
+  jsonLd={[article, breadcrumb]}
+>
+<main id="main">
+
+<header class="case-head"><div class="wrap" style="max-width:760px">
+  <div class="k"><a href="/lab" style="color:var(--accent)">← Lab</a> · {fmt(post.data.date)}</div>
+  <h1>{post.data.title}</h1>
+  <p class="tag">{post.data.summary}</p>
+  {post.data.tags.length > 0 && (
+    <div style="margin-top:20px;display:flex;gap:7px;flex-wrap:wrap">
+      {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+  )}
+</div></header>
+
+<section class="csec"><div class="wrap">
+  <div class="prose" style="max-width:680px">
+    <Content />
+  </div>
+  <p style="margin-top:36px">
+    <a class="btn" href="/lab">← Back to the Lab</a>
+  </p>
+</div></section>
+
+</main>
+<footer><div class="wrap"><div style="font-family:var(--mono);font-size:.8rem;opacity:.85">© 2026 DJ Welker · ceodjwelker@gmail.com · @dj.welker · York, PA + remote · <a href="/lab">← All notes</a></div></div></footer>
+
+<style is:global>
+  .prose{font-family:var(--serif);font-size:1.12rem;line-height:1.7;color:var(--ink2)}
+  .prose > * + *{margin-top:1.1em}
+  .prose h2{font-family:var(--display);color:var(--ink);font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:-.02em;margin-top:1.8em;line-height:1.15}
+  .prose h3{font-family:var(--display);color:var(--ink);font-size:1.25rem;margin-top:1.5em}
+  .prose strong{color:var(--ink);font-weight:600}
+  .prose a{color:var(--accent);border-bottom:1px solid rgba(30,70,53,.4)}
+  .prose ul,.prose ol{padding-left:1.3em}
+  .prose li + li{margin-top:.4em}
+  .prose blockquote{border-left:2px solid var(--accent);padding-left:16px;color:var(--muted);font-style:italic}
+  .prose code{font-family:var(--mono);font-size:.9em;background:var(--card);padding:.1em .35em;border-radius:3px}
+</style>
+
+</Base>

@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Résumé — DJ Welker"
+  description="DJ Welker — creative systems designer, builder, and founder. York, PA + remote. Operator + builder + founder."
+  type="profile"
+  current="resume"
+  printNav={true}
+>
+<style slot="head">
+.rwrap{max-width:840px;margin:0 auto;padding:44px 28px 80px}
+.rhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.rhead h1{font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.03em}
+.rhead .role{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-top:6px}
+.rmeta{font-family:var(--mono);font-size:.8rem;line-height:1.9;text-align:right;color:var(--ink2)}
+.rsec{margin-top:30px}
+.rsec h2{font-family:var(--display);font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:12px}
+.rsec p{font-size:1rem;color:var(--ink2);margin-bottom:8px}
+.rrow{display:grid;grid-template-columns:1fr 2.4fr;gap:16px;padding:10px 0;border-top:1px solid var(--line)}
+.rrow:first-of-type{border-top:none}
+.rrow .k{font-family:var(--display);font-weight:600}
+.rrow .k small{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;color:var(--muted)}
+.rrow .v{font-size:.96rem;color:var(--ink2)}
+.rcols{columns:2;column-gap:34px;font-size:.95rem}
+@media(max-width:600px){.rcols{columns:1}.rrow{grid-template-columns:1fr}}
+.printbtn{margin-top:8px}
+@media print{
+  .nav,.printbtn,footer{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .rwrap{max-width:100%;padding:0}
+  a{color:#000;text-decoration:none}
+  .rhead .role,.accent{color:#000!important}
+  .rsec{margin-top:16px}
+}
+</style>
+<main id="main">
+
+<div class="rwrap">
+  <div class="rhead">
+    <div><h1>Daniel "DJ" Welker</h1><div class="role">Creative systems designer · Builder · Founder</div></div>
+    <div class="rmeta">
+      <div><a href="mailto:ceodjwelker@gmail.com">ceodjwelker@gmail.com</a></div>
+      <div><a href="tel:+17178814960">(717) 881-4960</a></div>
+      <div>York, PA · Remote</div>
+      <div><a href="https://instagram.com/dj.welker">@dj.welker</a></div>
+      <div><a href="https://thrownafter.com">thrownafter.com</a></div>
+    </div>
+  </div>
+
+  <div class="rsec">
+    <h2>Summary</h2>
+    <p>Founder and builder with hands-on experience across operations, customer service, e-commerce, marketing, and brand building. I make brands, websites, and tools, and I run real operations — turning an unclear business, brand, or idea into something organized, attractive, and built to move, designed as one connected system. Founder of CE OS (studio + products) and Thrown After. Operator, builder, and founder — one person, start to finish.</p>
+  </div>
+
+  <div class="rsec">
+    <h2>Selected work</h2>
+    <div class="rrow"><div class="k">Titanium Detailing<small>Client · York, PA · live · 5.0★</small></div><div class="v">Full digital build for a mobile detailing business: brand, a 21-page mobile site (12 local city pages) that books by text, and Titanium OS — a private daily control center. Invisible to bookable in about a week. Client-owned.</div></div>
+    <div class="rrow"><div class="k">CE OS<small>Studio + products · active</small></div><div class="v">Founder-run operating-system studio: brand, websites, workflows, and software for clients (Build · Connect · Automate · Run), plus a portfolio of in-house products. Live site, 49 Stripe services, a Command Center.</div></div>
+    <div class="rrow"><div class="k">TSO Resale<small>Venture · 100+ sales · 4.65★</small></div><div class="v">Curated vintage plus one-of-one custom apparel on Depop and Grailed. Sourcing, photography, listing copy, pricing, and customers — built to 100+ sales at a 4.65★ rating.</div></div>
+    <div class="rrow"><div class="k">Top Flavorz Grill<small>Client · Carlisle, PA · delivered</small></div><div class="v">A full Viral Instagram Brand &amp; Content Guide — positioning, a 5-part viral formula, owned content series, and a 30-day launch, with an approved logo system.</div></div>
+    <div class="rrow"><div class="k">AUXTION · LIFTWAVE · Shiftly · STAKE · PLUG<small>Own products / concepts</small></div><div class="v">Self-built product ventures: a paid song-request app on Stripe Connect, a browser DJ platform, an hourly-business operations OS, a real-estate acquisition OS, and a TikTok Shop content engine.</div></div>
+    <div class="rrow"><div class="k">Thrown After · ScrollStop · CARBYN<small>Ventures</small></div><div class="v">A community discovery platform (built, rebuilding), a TikTok-first Shopify store, and a music/nightlife artist brand — each built and run on the same system.</div></div>
+  </div>
+
+  <div class="rsec">
+    <h2>Experience</h2>
+    <div class="rrow"><div class="k">Founder &amp; Creative Director — CE OS<small>2026 — Present</small></div><div class="v">Full-service creative studio: branding, web, marketing, content, photography, and events. Client management and end-to-end project delivery.</div></div>
+    <div class="rrow"><div class="k">Founder &amp; CEO — Thrown After<small>2026 — Present</small></div><div class="v">Built and launched a community events/opportunity platform end to end; rebuilding the platform plus a native iOS app.</div></div>
+    <div class="rrow"><div class="k">Founder — TSO Resale<small>2024 — Present</small></div><div class="v">Custom one-of-one apparel and curated resale on Depop and Grailed. 100+ sales, 4.65★.</div></div>
+    <div class="rrow"><div class="k">Assistant Manager — Store Space Self Storage<small>May 2026 — Present</small></div><div class="v">Operations, accounts, rentals, payments, sales targets, and facility management.</div></div>
+    <div class="rrow"><div class="k">Assistant Store Manager — Rutter's<small>2026</small></div><div class="v">Staff leadership, inventory, cash handling, merchandising, and daily operations.</div></div>
+    <div class="rrow"><div class="k">Team Member — Sheetz<small>Sep 2025 — Mar 2026</small></div><div class="v">Food and beverage prep, POS, cash handling, and customer service.</div></div>
+    <div class="rrow"><div class="k">Dietary / Laundry Aide — Lucent (Pleasant Acres)<small>Jun 2023 — Sep 2025</small></div><div class="v">Meal preparation, sanitation, laundry operations, organization, and teamwork.</div></div>
+  </div>
+
+  <div class="rsec">
+    <h2>Capabilities</h2>
+    <div class="rcols">
+      <p><b>Brand &amp; creative:</b> identity systems, logo design, art direction, graphic design, menus &amp; print, short-form video, pitch decks.</p>
+      <p><b>Web &amp; software:</b> websites, web apps, internal tools, portals, e-commerce, booking systems, business operating systems.</p>
+      <p><b>Automation &amp; AI:</b> workflow automation, CRM pipelines, email/SMS flows, AI chatbot/receptionist, custom AI workflows.</p>
+      <p><b>Growth:</b> local SEO + Google Business, review engines, social content, email/SMS marketing, paid social, funnels.</p>
+      <p><b>E-commerce:</b> Shopify, product/listing systems, Depop/Grailed/eBay resale, Klaviyo flows, dropship ops.</p>
+      <p><b>Operations:</b> SOPs, ops audits, dashboards, fractional digital ops, whole-business OS builds.</p>
+    </div>
+  </div>
+
+  <div class="rsec">
+    <h2>Stack</h2>
+    <p style="font-family:var(--mono);font-size:.86rem;color:var(--ink2)">JavaScript · HTML/CSS · React · Python · PWA · Three.js/WebGL · Stripe · Shopify · Klaviyo · Supabase · Netlify/Cloudflare · HubSpot/Apollo/Nimble · Notion · Figma · Adobe/Canva · Local SEO · AI/LLM systems</p>
+  </div>
+
+  <div class="rsec">
+    <h2>Education &amp; Leadership</h2>
+    <div class="rrow"><div class="k">Dallastown Area High School<small>High School Diploma · Honor Roll</small></div><div class="v">Graduated early (two semesters ahead).</div></div>
+    <div class="rrow"><div class="k">Scouts BSA<small>Senior Patrol Leader</small></div><div class="v">Youth leadership. Self-taught builder; considering online business/entrepreneurship education.</div></div>
+  </div>
+
+  <div class="rsec">
+    <h2>Based</h2>
+    <p>York, Pennsylvania — working locally and remote. Direct builder access, no agency layers. References available on request.</p>
+  </div>
+  <button class="btn btn--accent printbtn" onclick="window.print()">Print / Save as PDF <span class="ar">↗</span></button>
+</div>
+</main>
+<footer style="padding:30px 0"><div class="wrap"><div style="font-family:var(--mono);font-size:.72rem;opacity:.7">© 2026 DJ Welker · <a href="/">Home</a></div></div></footer>
+
+</Base>

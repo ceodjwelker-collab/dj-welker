@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('lab', ({ data }) => data.draft !== true)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<Base
+  title="Lab — DJ Welker"
+  description="Notes, experiments, and how the work gets made. First-person write-ups from DJ Welker on building brands, tools, and systems."
+  current="lab"
+>
+<main id="main">
+<header class="case-head"><div class="wrap">
+  <div class="k">Lab · notes &amp; process</div>
+  <h1>Lab.</h1>
+  <p class="tag">Notes, experiments, and how the work actually gets made. Case write-ups and the thinking behind the systems — in my own words, no ghostwriter.</p>
+</div></header>
+
+<section class="pad"><div class="wrap">
+  {posts.length === 0 ? (
+    <p class="lead">Nothing published here yet. New notes land as the work ships.</p>
+  ) : (
+    <div class="wgrid">
+      {posts.map((post) => (
+        <a class="wcard" href={`/lab/${post.id}`}>
+          <div class="top">
+            <span class="kind">{fmt(post.data.date)}</span>
+            {post.data.tags.length > 0 && <span class="st">{post.data.tags[0]}</span>}
+          </div>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.summary}</p>
+          {post.data.tags.length > 0 && (
+            <div style="margin-top:14px;display:flex;gap:7px;flex-wrap:wrap">
+              {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          )}
+          <span class="go">Read the note <span aria-hidden="true">→</span></span>
+        </a>
+      ))}
+    </div>
+  )}
+</div></section>
+</main>
+<footer><div class="wrap"><div style="font-family:var(--mono);font-size:.8rem;opacity:.85">© 2026 DJ Welker · ceodjwelker@gmail.com · @dj.welker · York, PA + remote</div></div></footer>
+
+</Base>

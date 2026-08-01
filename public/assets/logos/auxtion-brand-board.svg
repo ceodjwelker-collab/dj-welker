@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080A0F"/><stop offset="1" stop-color="#10141C"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#191E28"/><stop offset="1" stop-color="#0E1117"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000" flood-opacity=".45"/></filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#bg)"/>
+  <circle cx="1600" cy="-40" r="430" fill="#FF5F46" opacity=".08"/>
+  <circle cx="80" cy="1040" r="350" fill="#C7FF5A" opacity=".04"/>
+
+  <g transform="translate(90 84)">
+    <g transform="scale(1.4)">
+      <path d="M11 51 29.5 13 49 51" fill="none" stroke="#FF5F46" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20.5 37.5h21" fill="none" stroke="#F7F8FA" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="48" cy="37.5" r="5.5" fill="#C7FF5A"/>
+    </g>
+    <text x="104" y="61" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="64" font-weight="800" letter-spacing="-3">AUXTION</text>
+    <text x="108" y="94" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="15" letter-spacing="4">LIVE REQUEST SYSTEM</text>
+  </g>
+
+  <text x="90" y="250" fill="#C7FF5A" font-family="DejaVu Sans Mono, monospace" font-size="16" letter-spacing="3">PAID PRIORITY. DJ-CONTROLLED.</text>
+  <text x="90" y="332" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="74" font-weight="800" letter-spacing="-4">The request line</text>
+  <text x="90" y="410" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="74" font-weight="800" letter-spacing="-4">that pays.</text>
+  <text x="90" y="462" fill="#A7AFBD" font-family="DejaVu Sans, sans-serif" font-size="24">A transparent live queue where every paid tier has a visible effect.</text>
+
+  <g transform="translate(90 560)">
+    <text x="0" y="0" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="14" letter-spacing="2">COLOR LOGIC</text>
+    <g transform="translate(0 30)"><rect width="250" height="105" rx="18" fill="#FF5F46"/><text x="20" y="44" fill="#160B09" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Signal Coral</text><text x="20" y="75" fill="#5A2018" font-family="DejaVu Sans Mono, monospace" font-size="14">#FF5F46 · action</text></g>
+    <g transform="translate(270 30)"><rect width="250" height="105" rx="18" fill="#C7FF5A"/><text x="20" y="44" fill="#142000" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Queue Lime</text><text x="20" y="75" fill="#334900" font-family="DejaVu Sans Mono, monospace" font-size="14">#C7FF5A · live</text></g>
+    <g transform="translate(540 30)"><rect width="250" height="105" rx="18" fill="#FFC857"/><text x="20" y="44" fill="#251700" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Priority Gold</text><text x="20" y="75" fill="#5B3B00" font-family="DejaVu Sans Mono, monospace" font-size="14">#FFC857 · paid</text></g>
+    <g transform="translate(0 155)"><rect width="250" height="105" rx="18" fill="#080A0F" stroke="#303746"/><text x="20" y="44" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Obsidian</text><text x="20" y="75" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="14">#080A0F · base</text></g>
+    <g transform="translate(270 155)"><rect width="250" height="105" rx="18" fill="#171C26" stroke="#303746"/><text x="20" y="44" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Raised Panel</text><text x="20" y="75" fill="#A7AFBD" font-family="DejaVu Sans Mono, monospace" font-size="14">#171C26 · UI</text></g>
+    <g transform="translate(540 155)"><rect width="250" height="105" rx="18" fill="#7EA7FF"/><text x="20" y="44" fill="#071126" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="800">Utility Blue</text><text x="20" y="75" fill="#1A356A" font-family="DejaVu Sans Mono, monospace" font-size="14">#7EA7FF · info</text></g>
+  </g>
+
+  <g transform="translate(980 105)" filter="url(#shadow)">
+    <rect width="720" height="980" rx="34" fill="url(#panel)" stroke="#363E4C"/>
+    <g transform="translate(42 36)">
+      <path d="M11 51 29.5 13 49 51" fill="none" stroke="#FF5F46" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" transform="scale(.65)"/>
+      <path d="M20.5 37.5h21" fill="none" stroke="#F7F8FA" stroke-width="7" stroke-linecap="round" transform="scale(.65)"/>
+      <circle cx="48" cy="37.5" r="5.5" fill="#C7FF5A" transform="scale(.65)"/>
+      <text x="46" y="28" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="800">AUXTION</text>
+      <text x="548" y="28" fill="#C7FF5A" font-family="DejaVu Sans Mono, monospace" font-size="11">● LIVE REQUEST</text>
+    </g>
+    <line x1="0" y1="92" x2="720" y2="92" stroke="#2B313E"/>
+    <g transform="translate(48 145)">
+      <text x="0" y="0" fill="#C7FF5A" font-family="DejaVu Sans Mono, monospace" font-size="13" letter-spacing="2">REQUESTING FROM @NIGHTSHIFT</text>
+      <text x="0" y="74" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="48" font-weight="800" letter-spacing="-2">What should</text>
+      <text x="0" y="127" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="48" font-weight="800" letter-spacing="-2">play next?</text>
+      <rect x="0" y="164" width="624" height="64" rx="15" fill="#0B0E14" stroke="#3B4351"/>
+      <text x="24" y="204" fill="#747D8D" font-family="DejaVu Sans, sans-serif" font-size="18">Search any song or artist…</text>
+
+      <rect x="0" y="258" width="624" height="124" rx="20" fill="#11151D" stroke="#2B313E"/>
+      <rect x="18" y="280" width="80" height="80" rx="14" fill="#2C3D82"/>
+      <text x="120" y="311" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="800">After Hours</text>
+      <text x="120" y="342" fill="#A7AFBD" font-family="DejaVu Sans Mono, monospace" font-size="13">The Weeknd</text>
+
+      <g transform="translate(0 410)">
+        <rect width="196" height="112" rx="17" fill="#0C0F15" stroke="#596170"/>
+        <rect width="4" height="112" rx="2" fill="#8A94A6"/>
+        <text x="22" y="40" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="800">Request</text>
+        <text x="22" y="72" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="12">Free · joins pool</text>
+      </g>
+      <g transform="translate(214 410)">
+        <rect width="196" height="112" rx="17" fill="#0C0F15" stroke="#FFC857"/>
+        <rect width="4" height="112" rx="2" fill="#FFC857"/>
+        <text x="22" y="40" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="800">Priority</text>
+        <text x="22" y="72" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="12">$2+ · moves up</text>
+      </g>
+      <g transform="translate(428 410)">
+        <rect width="196" height="112" rx="17" fill="#150F0D" stroke="#FF5F46"/>
+        <rect width="4" height="112" rx="2" fill="#FF5F46"/>
+        <text x="22" y="40" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="800">Play Next</text>
+        <text x="22" y="72" fill="#A7AFBD" font-family="DejaVu Sans Mono, monospace" font-size="12">$5+ · next slot</text>
+      </g>
+
+      <rect x="0" y="558" width="624" height="68" rx="15" fill="#FF5F46"/>
+      <text x="312" y="600" fill="#160B09" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="800">Send request</text>
+
+      <text x="0" y="680" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="12" letter-spacing="2">TYPOGRAPHY</text>
+      <text x="0" y="742" fill="#F7F8FA" font-family="DejaVu Sans, sans-serif" font-size="38" font-weight="800">Manrope 800</text>
+      <text x="0" y="790" fill="#A7AFBD" font-family="DejaVu Sans, sans-serif" font-size="20">Product headings, UI, body, buttons</text>
+      <text x="0" y="850" fill="#FFC857" font-family="DejaVu Sans Mono, monospace" font-size="24">IBM Plex Mono 600</text>
+      <text x="0" y="886" fill="#747D8D" font-family="DejaVu Sans Mono, monospace" font-size="15">$12.00 · PRIORITY · @NIGHTSHIFT</text>
+    </g>
+  </g>
+</svg>

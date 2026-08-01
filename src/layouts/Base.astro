@@ -1,0 +1,135 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  current?: string;       // nav key for aria-current
+  robots?: string;
+  printNav?: boolean;     // resume uses a Print button instead of Proof Mode
+  jsonLd?: object[];      // extra structured data (e.g. breadcrumbs)
+}
+
+const {
+  title,
+  description = 'DJ Welker builds brands, products, campaigns, and systems that make businesses harder to ignore and easier to run. York, PA + remote.',
+  image,
+  type = 'website',
+  current,
+  robots = 'index,follow,max-image-preview:large',
+  printNav = false,
+  jsonLd = [],
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://djwelker.com');
+const canonical = new URL(Astro.url.pathname, site);
+const ogImage = new URL(image ?? '/og.png', site).href;
+
+const nav = [
+  { key: 'work', href: '/work', label: 'Work' },
+  { key: 'about', href: '/about', label: 'About' },
+  { key: 'services', href: '/services', label: 'Services' },
+  { key: 'logos', href: '/logos', label: 'Logo Design' },
+  { key: 'lab', href: '/lab', label: 'Lab' },
+  { key: 'resume', href: '/resume', label: 'Résumé' },
+  { key: 'contact', href: '/contact', label: 'Contact' },
+];
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  url: 'https://djwelker.com/',
+  name: 'DJ Welker',
+  alternateName: 'Daniel Welker',
+  jobTitle: 'Creative Systems Designer & Business Modernizer',
+  email: 'mailto:ceodjwelker@gmail.com',
+  telephone: '+1-717-881-4960',
+  address: { '@type': 'PostalAddress', addressLocality: 'York', addressRegion: 'PA', addressCountry: 'US' },
+  sameAs: ['https://instagram.com/dj.welker'],
+  alumniOf: { '@type': 'EducationalOrganization', name: 'Dallastown Area High School' },
+  worksFor: { '@type': 'Organization', name: 'CE OS' },
+  knowsAbout: ['Brand identity', 'Web development', 'UI/UX design', 'Automation', 'Local SEO', 'AI implementation', 'Business operations'],
+};
+
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'DJ Welker',
+  url: 'https://djwelker.com/',
+  inLanguage: 'en-US',
+  author: person,
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content="DJ Welker" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/dj.css" />
+
+<meta name="robots" content={robots} />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#F4F0E6" />
+<link rel="canonical" href={canonical.href} />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+<link rel="apple-touch-icon" href="/icon-192.png" />
+
+<meta property="og:url" content={canonical.href} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="DJ Welker" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="DJ Welker — creative systems designer, York PA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<script type="application/ld+json" set:html={JSON.stringify(website)} />
+<script type="application/ld+json" set:html={JSON.stringify(person)} />
+{jsonLd.map((block) => (
+  <script type="application/ld+json" set:html={JSON.stringify(block)} />
+))}
+<slot name="head" />
+</head>
+<body>
+<a class="skiplink" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary"><div class="wrap row">
+  <a class="brand" href="/" aria-label="DJ Welker — home"><span class="mk" aria-hidden="true"></span>DJ Welker</a>
+  <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-l" id="navLinks">
+    {nav.map((n) => (
+      <a href={n.href} aria-current={current === n.key ? 'page' : undefined}>{n.label}</a>
+    ))}
+  </div>
+  {printNav ? (
+    <button class="proofbtn" onclick="window.print()" aria-label="Print or save this résumé as PDF">Print / Save PDF</button>
+  ) : (
+    <button class="proofbtn" id="proofBtn" aria-pressed="false" title="Reveal role, constraints, and honest status on each project (press P)"><span class="d" aria-hidden="true"></span> Proof Mode</button>
+  )}
+</div></nav>
+
+<slot />
+
+<button class="totop" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  import { inject } from '@vercel/analytics';
+  inject();
+</script>
+<script src="/dj.js" defer is:inline></script>
+</body>
+</html>

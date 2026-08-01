@@ -135,8 +135,9 @@ function djConstellation(cv, N){
   addEventListener('pointermove',function(e){ mpx=e.clientX; mpy=e.clientY; },{passive:true});
   B.classList.add('dj-ready');
 
-  /* F1-3 header constellation on interior pages */
-  (function(){ if(d.getElementById('heroCanvas'))return;
+  /* F1-3 header constellation on interior pages. The homepage uses a
+     separate, deliberately clear split hero; never layer WebGL over it. */
+  (function(){ if(d.getElementById('heroCanvas') || d.querySelector('.home-hero'))return;
     var host=d.querySelector('.case-head, header.pad, main>header, main>section.pad'); if(!host)return;
     if(getComputedStyle(host).position==='static') host.style.position='relative'; host.style.overflow='hidden';
     [].slice.call(host.children).forEach(function(c){ if(c.tagName!=='CANVAS'){ if(getComputedStyle(c).position==='static')c.style.position='relative'; c.style.zIndex='1'; } });

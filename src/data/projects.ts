@@ -349,7 +349,7 @@ export const projects: Project[] = [
       'A real-estate acquisition OS — analyze a deal in seconds (MAO, ARV, repairs, ROI, risk score), run the pipeline from lead to paid, auto-generate contracts, and manage cash buyers in one workspace. A private tool in build; no customers.',
     proof:
       'A working deal-math engine with real formulas (MAO/ARV/ROI/risk), a pipeline CRM, and contract generation. Private self-built concept, in build.',
-    liveUrl: 'https://stakeos.vercel.app',
+    liveUrl: 'https://stakehq.vercel.app',
     thumb: '/assets/shots/stake-live.jpg',
     kicker: 'Case study · Real-estate acquisition OS · SaaS (concept)',
     tagline:
